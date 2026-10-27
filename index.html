@@ -1151,6 +1151,22 @@ html.hasai .wrap{padding-bottom:104px!important}
 .row.tle{min-width:0}
 .row.tle>div{min-width:0}
 @media (max-width:820px){.tlmain .prow{flex-wrap:wrap;row-gap:6px}.tlmain .prow>.cpick,.tlmain .prow>.head{flex:1 1 100%}.tlctl{width:100%;flex-wrap:nowrap}.tlctl .dd{flex:1 1 0}.tlctl .ddl{display:none}.tlcn{margin-left:0}}
+/* V65 칩 설명 */
+.badge,.grade,.evb,.chip,.nwb,.cph,.cln,.csub,.cstg,.tlty{cursor:help;-webkit-tap-highlight-color:transparent}
+:is(.badge,.grade,.evb,.chip,.nwb,.cph,.cln,.csub,.cstg,.tlty).cxon{outline:2px solid var(--accent);outline-offset:1px}
+.chipx{position:fixed;z-index:120;width:min(340px,calc(100vw - 24px));max-height:min(60vh,440px);overflow:auto;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:10px;box-shadow:0 10px 32px rgba(0,0,0,.18),0 2px 6px rgba(0,0,0,.08);padding:14px 16px 12px;font-size:13px;line-height:1.6}
+.chipx[hidden]{display:none}
+.chipx-x{position:absolute;top:8px;right:8px;width:28px;height:28px;border:0;border-radius:6px;background:transparent;color:var(--muted);display:grid;place-items:center;cursor:pointer}
+.chipx-x svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.chipx-x:hover{background:var(--surface2);color:var(--ink)}
+.chipx .cxb+.cxb{margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+.chipx .cxt{font-weight:700;font-size:13.5px;color:var(--accent);padding-right:28px}
+.chipx .cxq{display:block;margin-top:2px;font-weight:600;color:var(--ink);font-size:12.5px}
+.chipx p{margin:4px 0 0}
+.chipx .cxg{margin:10px 0 0;padding-top:8px;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:6px 10px;font-size:12.5px}
+.chipx .cxg dt{font-weight:700;white-space:nowrap}
+.chipx .cxg dd{margin:0;color:var(--ink)}
+@media (max-width:420px){.chipx .cxg{grid-template-columns:1fr;gap:2px}.chipx .cxg dd{margin-bottom:6px}}
 </style>
 
 <div class="wrap">
@@ -2411,6 +2427,7 @@ var UXI={ko:{bNew:"NEW",bChg:"변경",bUpd:"업데이트",colAll:"모두 접기"
 function ux(k){return UXI[state.lang==="en"?"en":"ko"][k]}
 /* 최근 변경 기록: DB를 고친 날짜(d), 대상 요법 제목 접두(p), 종류(k: add/mod) */
 var CHG=[
+ {d:"2026-10-28",cid:"*",p:"",k:"add",ko:"칩 설명 추가: 상태·등급·차수·임상 단계 등 칩을 누르면 뜻을 쉬운 말로 표시",en:"Chip explanations: tap any status, category, line or trial-stage chip to see what it means"},
  {d:"2026-10-27",cid:"*",p:"",k:"add",ko:"전체 임상 결과 타임라인 추가: 암종 선택 목록 맨 위에서 모든 암종의 결과·보도·허가를 발표일순으로 확인",en:"New all-trial results timeline at the top of the cancer list: results, news and regulatory events across cancers by date"},
  {d:"2026-10-18",cid:"colon",p:"소토라십(또는 아다그라십)",k:"mod",ko:"Adagrasib + Cetuximab FDA 가속승인 철회(2026-09-01) 반영",en:"Reflected FDA withdrawal of adagrasib + cetuximab accelerated approval (2026-09-01)"},
  {d:"2026-10-18",cid:"breast",p:"Camizestrant + CDK4/6",k:"add",ko:"SERENA-6 근거 FDA 승인(2026-09-04) 반영해 추가",en:"Added after FDA approval based on SERENA-6 (2026-09-04)"},
@@ -2827,6 +2844,180 @@ document.addEventListener("click",function(e){var o=e.target.closest('.dd[data-d
     if(v==="*")state.tlc=[];else{var i=state.tlc.indexOf(v);if(i>=0)state.tlc.splice(i,1);else state.tlc.push(v)}tlSave();
     var d=o.closest(".dd"),sc=d.querySelector(".dd-sc"),st=sc.scrollTop;render();var d2=document.querySelector('#view .dd[data-dd="tlc"]');if(d2){var l=d2.querySelector(".dd-list"),b2=d2.querySelector(".dd-btn");l.hidden=false;b2.setAttribute("aria-expanded","true");l.style.maxHeight="340px";var s2=l.querySelector(".dd-sc");s2.scrollTop=st;ddFade(s2)}return}
   o=e.target.closest('.dd[data-dd="tlp"] .dd-o');if(o){e.stopPropagation();ddClose();state.tlp=o.dataset.v;tlSave();render()}},true);
+/* ---------- V65 칩 설명: 칩을 누르면 뜻을 쉬운 말로 보여 줌 ---------- */
+var CXI={ko:{
+  st_L:["등재","NCCN 가이드라인에 이 요법이 실려 있고, 근거 등급(Category)이나 선호 구분(Preferred 등)까지 원문에서 확인한 항목입니다."],
+  st_M:["등재 확인","NCCN 가이드라인에 실려 있는 것은 확인했지만, 근거 등급·선호 구분은 아직 옮겨 적지 못한 항목입니다."],
+  st_D:["차이","NCCN 원문과 이 DB의 정리가 서로 다른 항목입니다. 등급이 다르거나 적용 대상(치료 차수, 바이오마커 등)이 다르게 적혀 있는 경우로, ‘자세히’의 메모에 차이 내용이 있습니다."],
+  st_U:["미등재","대조한 NCCN 판에서 찾지 못한 항목입니다. 대부분 FDA 승인이나 학회 발표가 NCCN 개정보다 먼저 나온 경우입니다."],
+  st_C:["추가 확인","NCCN 원문을 한 번 더 확인해야 하는 항목입니다."],
+  st_N:["미대조","아직 NCCN 원문과 맞춰 보지 않은 항목입니다. 주로 최근 FDA 승인 뒤 새로 추가한 요법입니다."],
+  c1:["Category 1","근거 수준이 높고(대개 대규모 무작위 3상) NCCN 패널 전원이 적절한 치료라고 합의한 권고입니다."],
+  c2A:["Category 2A","근거 수준은 Category 1보다 낮지만(2상, 관찰 자료 등) 패널 전원이 적절하다고 합의한 권고입니다. NCCN 권고의 기본 등급입니다."],
+  c2B:["Category 2B","근거 수준이 낮고, 패널 다수(전원은 아님)가 적절하다고 본 권고입니다."],
+  c3:["Category 3","근거 수준과 관계없이 패널 안에서 적절성에 대한 이견이 큰 권고입니다."],
+  pref:["Preferred (선호 요법)","같은 상황의 여러 선택지 가운데 효과·안전성·근거가 가장 낫다고 보아 NCCN이 우선 권하는 요법입니다."],
+  other:["Other recommended (기타 권고)","권고는 되지만 선호 요법에 비해 효과가 다소 낮거나, 독성이 크거나, 근거가 덜 성숙했거나, 비용 대비 효과가 떨어지는 요법입니다."],
+  useful:["Useful in certain circumstances","특정 상황(다른 약을 쓸 수 없을 때, 특정 환자군 등)에서만 고려할 만한 요법입니다."],
+  evb:["근거 임상","이 요법이 표준이 된 근거 임상의 수입니다. ‘자세히’를 누르면 각 임상의 설계와 결과(생존 기간, 위험비 HR 등)를 볼 수 있습니다."],
+  fl2:["2차 보도 기준","일부 수치를 논문·회사 발표 같은 원 출처가 아니라 언론 기사로만 확인했습니다. 원 출처로 확인하기 전까지는 참고용입니다."],
+  fle:["추정·미확인","일부 수치를 원 출처에서 확인하지 못했습니다. 인용하기 전에 원문을 확인해야 합니다."],
+  pf_v:["확인","원 출처(등록 정보·논문·보도자료)로 확인한 항목입니다."],pf_e:["미확인","원 출처로 아직 확인하지 못한 항목입니다."],pf_2:["2차 보도","언론 기사로만 확인한 항목입니다."],pf_U:["NCCN 미등재","아직 NCCN 가이드라인에 실리지 않은 개발 중 요법입니다."],
+  n_add:["NEW","최근 30일 안에 이 DB에 새로 추가한 항목입니다. 주로 새 FDA 승인을 반영한 것입니다."],
+  n_mod:["변경","최근 30일 안에 내용을 고친 항목입니다. 사유는 화면 아래 ‘최근 변경’에 있습니다."],
+  n_upd:["업데이트","최근 30일 안에 이 임상에 새 소식(결과 발표, 허가 신청 등)이 있습니다. ‘자세히’의 최근 현황에서 볼 수 있습니다."],
+  p1:["1상","소수 환자에게 처음 투여해 안전성과 적정 용량을 확인하는 단계입니다."],
+  p2:["2상","더 많은 환자에서 효과 신호(종양 반응률 등)와 안전성을 보는 단계입니다. 희귀·난치 영역에서는 2상 결과로 가속승인을 받기도 합니다."],
+  p23:["2/3상","2상 부분에서 효과를 먼저 확인한 뒤 같은 시험 안에서 3상으로 이어 가는 설계입니다."],
+  p3:["3상","수백~수천 명을 무작위로 나눠 기존 표준치료와 직접 비교하는 단계입니다. 허가와 표준요법 변경의 근거가 됩니다."],
+  l_1L:["1차","진단(또는 전이·재발 진단) 뒤 처음 받는 치료입니다."],
+  l_2L:["2차","1차 치료 뒤 암이 진행했거나 부작용으로 중단한 뒤 받는 치료입니다."],
+  "l_3L+":["3차 이후","두 가지 이상의 치료를 받은 뒤의 치료입니다."],
+  l_adjuvant:["보조요법","수술로 암을 제거한 뒤, 남아 있을 수 있는 미세한 암세포를 없애 재발을 막으려는 치료입니다."],
+  l_neoadjuvant:["수술 전 (선행) 요법","수술 전에 종양을 줄여 수술을 쉽게 하고, 약효를 미리 확인하려는 치료입니다."],
+  l_perioperative:["수술 전후 요법","수술 전과 수술 후에 이어서 하는 치료입니다."],
+  l_maintenance:["유지요법","초기 치료로 암이 줄거나 멈춘 뒤 그 상태를 오래 유지하려고 계속하는 치료입니다."],
+  l_other:["기타 차수","1차·2차 같은 치료 순서나 수술 전후 구분에 딱 맞지 않는 상황입니다."],
+  g_ongoing:["진행 중","아직 주요 결과가 공개되지 않은 시험입니다."],
+  g_readout:["결과 발표","주요 결과가 공개됐지만 아직 허가나 표준요법 반영 전인 시험입니다."],
+  g_filed:["허가 신청","회사가 FDA 등 규제기관에 허가를 신청해 심사 중인 단계입니다."],
+  g_approved:["최근 허가","허가는 났지만 이 DB의 표준요법이나 NCCN에는 아직 반영되지 않았을 수 있습니다."],
+  g_stopped:["중단·실패","1차 평가변수를 충족하지 못했거나, 안전성·사업상 이유로 중단된 시험입니다."],
+  t_res:["결과 발표","학회나 논문으로 생존 기간·위험비(HR) 같은 수치가 공개된 사건입니다."],
+  t_top:["Topline·보도","회사 보도자료입니다. 1차 평가변수 충족 여부만 먼저 알리는 Topline 발표나 학회 발표 예고 등이 해당하며, 수치가 없을 수 있습니다."],
+  t_reg:["허가·신청","허가 신청 접수, 우선심사 지정, 승인, 유럽 CHMP 의견 같은 규제 관련 사건입니다."],
+  t_etc:["기타","시험 개시, 첫 환자 투여, 등록 완료 같은 진행 관련 사건입니다."],
+  nv:["신규 개정 감지","NCCN이 이 DB가 대조한 판보다 새로운 판을 냈습니다. 새 판과 다시 맞춰 보기 전까지 등재 상태나 등급이 바뀌었을 수 있습니다."],
+  sub:["대상 환자군","이 시험이 등록하는 환자의 조건입니다(암의 아형, 바이오마커, 병기, 이전 치료 등). 아래는 표기에 쓰인 용어 풀이입니다."],
+  gl:"용어 풀이",close:"닫기",hint:"칩을 누르면 뜻이 나옵니다"},
+ en:{
+  st_L:["Listed","The regimen appears in the NCCN Guidelines, and its evidence category or preference designation was confirmed in the source text."],
+  st_M:["Listing confirmed","The regimen appears in the NCCN Guidelines, but its category and preference were not yet transcribed."],
+  st_D:["Discrepancy","The NCCN source and this DB disagree, e.g. a different category or a different population (line, biomarker). See the note under Details."],
+  st_U:["Not listed","Not found in the NCCN edition checked, usually because an FDA approval or congress readout came before the guideline update."],
+  st_C:["Needs check","The NCCN source needs to be checked again."],
+  st_N:["Not cross-checked","Not yet compared with the NCCN source, typically a regimen added after a recent FDA approval."],
+  c1:["Category 1","High-level evidence (usually large randomized phase 3 trials) with uniform NCCN panel consensus."],
+  c2A:["Category 2A","Lower-level evidence with uniform panel consensus. This is NCCN's default category."],
+  c2B:["Category 2B","Lower-level evidence with panel consensus that is not uniform."],
+  c3:["Category 3","Major disagreement within the panel, regardless of evidence level."],
+  pref:["Preferred","The option NCCN favors among alternatives for the same setting, based on efficacy, safety and evidence."],
+  other:["Other recommended","Recommended, but may be somewhat less effective, more toxic, based on less mature data, or less affordable than preferred options."],
+  useful:["Useful in certain circumstances","Worth considering only in specific situations, e.g. when other drugs cannot be used or for particular patient groups."],
+  evb:["Evidence trials","Number of trials supporting this regimen. Open Details for each trial's design and results (survival, hazard ratio, etc.)."],
+  fl2:["Secondary report","Some figures were confirmed only from news coverage rather than the paper or company release. Use as reference until verified."],
+  fle:["Estimated · unverified","Some figures could not be confirmed in the original source. Check the source before citing."],
+  pf_v:["Verified","Confirmed against the original source (registry, paper or release)."],pf_e:["Unverified","Not yet confirmed against the original source."],pf_2:["Secondary report","Confirmed only from news coverage."],pf_U:["Not in NCCN","An investigational regimen not yet in the NCCN Guidelines."],
+  n_add:["NEW","Added to this DB within the last 30 days, usually after a new FDA approval."],
+  n_mod:["Changed","Edited within the last 30 days. The reason is listed under Recent changes at the bottom."],
+  n_upd:["Update","This trial had news (results, filing, etc.) in the last 30 days. See Latest status under Details."],
+  p1:["Phase 1","First use in a small number of patients to check safety and dose."],
+  p2:["Phase 2","Looks for an efficacy signal (e.g. response rate) and safety in more patients; sometimes the basis for accelerated approval."],
+  p23:["Phase 2/3","A phase 2 part checks efficacy first, then the same trial continues as phase 3."],
+  p3:["Phase 3","Hundreds to thousands of patients randomized against the current standard; the basis for approval and practice change."],
+  l_1L:["First line","The first treatment after diagnosis (or after metastatic/recurrent diagnosis)."],
+  l_2L:["Second line","Treatment after the cancer progresses on, or stops due to side effects of, first-line therapy."],
+  "l_3L+":["Third line and later","Treatment after two or more prior therapies."],
+  l_adjuvant:["Adjuvant","Treatment after surgery to remove any remaining microscopic cancer and prevent recurrence."],
+  l_neoadjuvant:["Neoadjuvant","Treatment before surgery to shrink the tumor and gauge drug response."],
+  l_perioperative:["Perioperative","Treatment given both before and after surgery."],
+  l_maintenance:["Maintenance","Continued treatment to keep the cancer controlled after initial therapy works."],
+  l_other:["Other","A setting that does not fit line-of-therapy or surgical categories."],
+  g_ongoing:["Ongoing","Main results not yet released."],g_readout:["Read out","Main results released, but not yet approved or adopted as standard."],
+  g_filed:["Filed","Submitted to the FDA or another regulator and under review."],g_approved:["Recently approved","Approved, but may not yet be reflected in this DB's standard of care or in NCCN."],
+  g_stopped:["Stopped / failed","Missed its primary endpoint or stopped for safety or business reasons."],
+  t_res:["Results","Figures such as survival or hazard ratios released at a congress or in a paper."],
+  t_top:["Topline · news","Company releases, such as topline announcements of whether the primary endpoint was met or notices of upcoming presentations; figures may be absent."],
+  t_reg:["Regulatory","Regulatory events such as filing acceptance, priority review, approval or a CHMP opinion."],
+  t_etc:["Other","Progress events such as trial start, first patient dosed or enrollment completion."],
+  nv:["New edition detected","NCCN has published a newer edition than the one this DB was checked against; listing status or category may have changed."],
+  sub:["Population","The patients this trial enrolls (subtype, biomarker, stage, prior therapy). Terms used are explained below."],
+  gl:"Glossary",close:"Close",hint:"Tap a chip to see what it means"}};
+var CXG=[
+ [/HR\+/,"HR+","호르몬 수용체 양성. 암세포에 에스트로겐·프로게스테론 수용체가 있어 호르몬 차단 치료가 듣는 유방암입니다.","Hormone receptor-positive: estrogen/progesterone receptors present, so hormone-blocking therapy works."],
+ [/HER2\s*(\+|양성)|HER2\+/,"HER2+","HER2 단백이 과발현되거나 유전자가 증폭된 암으로, HER2 표적 치료 대상입니다.","HER2 protein overexpressed or gene amplified; eligible for HER2-targeted therapy."],
+ [/HER2\s*[−-](?!low)|HER2−/,"HER2−","HER2 음성. HER2 표적 치료의 대상이 아닌 암입니다(저발현은 별도).","HER2-negative; not a target for standard HER2 therapy (low expression is separate)."],
+ [/IHC\s*[123]\+/,"IHC 1+/2+/3+","면역조직화학 염색으로 본 단백(주로 HER2) 발현 정도입니다. 3+가 가장 강하고, 1+·2+ 같은 저발현도 일부 ADC의 대상이 됩니다.","Immunohistochemistry staining intensity (often HER2); 3+ is strongest, and low expression (1+/2+) can qualify for some ADCs."],
+ [/TNBC/,"TNBC","삼중음성 유방암. ER·PR·HER2가 모두 음성이라 호르몬·HER2 표적 치료가 듣지 않습니다.","Triple-negative breast cancer: ER, PR and HER2 all negative."],
+ [/ESR1/,"ESR1 변이","에스트로겐 수용체 유전자 변이로, 주로 호르몬 치료 중 생겨 내성의 원인이 됩니다.","Estrogen receptor gene mutation, usually acquired on endocrine therapy and causing resistance."],
+ [/dMMR|MSI-H|MMRd/,"dMMR / MSI-H","DNA 복제 오류를 고치는 기능(미스매치 복구)이 망가진 암입니다. 변이가 많아 면역항암제가 잘 듣습니다.","Mismatch-repair deficient / microsatellite-instability high: many mutations, so immunotherapy works well."],
+ [/pMMR|MSS/,"pMMR / MSS","미스매치 복구 기능이 정상인 암으로, 면역항암제 단독 효과가 낮은 편입니다.","Mismatch-repair proficient / microsatellite stable: immunotherapy alone tends to work less well."],
+ [/PD-?L1|CPS|TPS/,"PD-L1 · CPS","PD-L1은 암이 면역세포의 공격을 피하게 하는 단백입니다. CPS·TPS는 그 발현을 점수로 매긴 것으로, 면역항암제 대상 선별에 씁니다.","PD-L1 helps tumors evade immune attack; CPS/TPS score its expression to select patients for immunotherapy."],
+ [/EGFR/,"EGFR","EGFR 유전자의 활성 변이(또는 증폭)입니다. 폐암에서는 EGFR 억제제의 대상입니다.","Activating mutation (or amplification) of EGFR; in lung cancer, the target of EGFR inhibitors."],
+ [/ALK/,"ALK 융합","ALK 유전자가 다른 유전자와 붙은 이상으로, ALK 억제제의 대상입니다.","ALK gene fusion; target of ALK inhibitors."],
+ [/KRAS|RAS/,"KRAS / RAS","세포 성장 신호 유전자의 변이입니다. KRAS G12C처럼 특정 변이에는 전용 억제제가 있고, 대장암에서는 RAS 변이가 있으면 EGFR 항체가 듣지 않습니다.","Growth-signal gene mutations; some (e.g. KRAS G12C) have dedicated inhibitors, and in colorectal cancer RAS mutations rule out EGFR antibodies."],
+ [/BRAF/,"BRAF","BRAF 유전자의 활성 변이(주로 V600E)로, BRAF(±MEK) 억제제의 대상입니다.","Activating BRAF mutation (mostly V600E); target of BRAF (±MEK) inhibitors."],
+ [/구동변이 음성|driver-negative/i,"구동변이 음성","EGFR·ALK 등 표적약이 있는 핵심 유전자 이상이 없는 경우입니다.","No actionable driver alteration such as EGFR or ALK."],
+ [/BRCA|HRR|HRD/,"BRCA · HRR · HRD","DNA 이중가닥 손상을 고치는 상동재조합 복구 관련 유전자 이상입니다. PARP 억제제가 잘 듣는 경향이 있습니다.","Defects in homologous-recombination DNA repair (e.g. BRCA1/2); tend to respond to PARP inhibitors."],
+ [/CLDN18\.2/,"CLDN18.2","위암 세포 표면 단백(claudin 18.2)으로, 이를 겨냥한 항체 치료의 대상입니다.","Gastric tumor surface protein claudin 18.2; target of specific antibodies."],
+ [/FRα/,"FRα","엽산 수용체 알파. 난소암에 많이 발현되며 이를 겨냥한 ADC의 대상입니다.","Folate receptor alpha, common in ovarian cancer; ADC target."],
+ [/PSMA/,"PSMA","전립선암 세포 표면 단백으로, PSMA 표적 방사성의약품의 대상입니다.","Prostate cancer surface protein; target of PSMA radioligands."],
+ [/mCRPC/,"mCRPC","전이성 거세저항성 전립선암. 남성호르몬을 차단해도 진행하는 단계입니다.","Metastatic castration-resistant prostate cancer: progresses despite androgen deprivation."],
+ [/mHSPC|mCSPC/,"mHSPC / mCSPC","전이성 호르몬(거세) 감수성 전립선암. 남성호르몬 차단이 아직 듣는 단계입니다.","Metastatic hormone/castration-sensitive prostate cancer: androgen deprivation still works."],
+ [/NMIBC/,"NMIBC","근육층까지 침범하지 않은 방광암입니다.","Non-muscle-invasive bladder cancer."],[/(^|[^N])MIBC/,"MIBC","근육층까지 침범한 방광암입니다.","Muscle-invasive bladder cancer."],
+ [/BCG/,"BCG 불응·미치료","방광 안에 BCG를 넣는 표준 치료에 반응하지 않았거나(불응) 아직 받지 않은(미치료) 경우입니다.","Did not respond to (unresponsive) or has not received (naive) intravesical BCG."],
+ [/백금 저항성|platinum-resistant/,"백금 저항성","백금 항암제를 마지막으로 쓴 뒤 6개월 안에 재발한 경우로, 치료가 어려운 군입니다.","Recurrence within 6 months of last platinum chemotherapy."],
+ [/백금 민감성|platinum-sensitive/,"백금 민감성","백금 항암제를 마지막으로 쓴 뒤 6개월이 지나 재발한 경우로, 백금 재투여가 듣는 편입니다.","Recurrence more than 6 months after last platinum; platinum usually works again."],
+ [/제한기/,"제한기 SCLC","소세포폐암이 한쪽 흉곽(방사선 한 범위) 안에 국한된 단계입니다.","Limited-stage small cell lung cancer, confined to one radiation field."],[/확장기/,"확장기 SCLC","소세포폐암이 한쪽 흉곽 밖으로 퍼진 단계입니다.","Extensive-stage small cell lung cancer."],
+ [/RRMM|재발·불응|R\/R/,"재발·불응","치료 뒤 재발했거나 치료에 반응하지 않은 경우입니다(RRMM: 재발·불응 다발골수종).","Relapsed or refractory disease (RRMM: relapsed/refractory multiple myeloma)."],
+ [/NDMM/,"NDMM","새로 진단된 다발골수종입니다.","Newly diagnosed multiple myeloma."],
+ [/이식 (부)?적격|이식 비계획/,"이식 적격·부적격","고용량 항암 후 자가조혈모세포이식을 받을 수 있는지(나이·전신 상태 기준)를 뜻합니다.","Whether the patient can undergo high-dose chemotherapy with autologous stem cell transplant."],
+ [/JAKi/,"JAKi 미투약","JAK 억제제(룩솔리티닙 등)를 써 본 적이 없는 환자입니다.","Never treated with a JAK inhibitor (e.g. ruxolitinib)."],
+ [/Ph[+−-]/,"Ph+ / Ph−","필라델피아 염색체(BCR-ABL 융합) 유무입니다. Ph+면 BCR-ABL 억제제를 함께 씁니다.","Presence of the Philadelphia chromosome (BCR-ABL); Ph+ disease is treated with BCR-ABL inhibitors."],
+ [/CML-CP/,"CML-CP","만성골수성백혈병 만성기(가장 초기 단계)입니다.","Chronic myeloid leukemia in chronic phase."],
+ [/ccRCC|nccRCC/,"ccRCC / nccRCC","신장암 중 가장 흔한 투명세포형(ccRCC)과 그 밖의 비투명세포형(nccRCC)입니다.","Clear-cell (most common) vs non-clear-cell renal cell carcinoma."],
+ [/ESCC/,"ESCC","식도 편평세포암입니다.","Esophageal squamous cell carcinoma."],[/EGJ|GEJ/,"EGJ / GEJ","식도와 위가 만나는 부위(식도위접합부)의 암입니다.","Esophagogastric junction."],
+ [/HNSCC/,"HNSCC","두경부 편평세포암입니다.","Head and neck squamous cell carcinoma."],[/HPV/,"HPV","인유두종바이러스 관련 여부로, 두경부암에서는 예후가 달라 따로 구분합니다.","Human papillomavirus status; in head and neck cancer it changes prognosis."],
+ [/Child-Pugh|BCLC/,"Child-Pugh · BCLC","Child-Pugh는 간 기능 등급(A가 가장 양호), BCLC는 간암 병기 체계입니다.","Child-Pugh grades liver function (A is best); BCLC is the liver cancer staging system."],
+ [/RAI/,"RAI 불응","방사성요오드 치료에 더 이상 반응하지 않는 분화갑상선암입니다.","Thyroid cancer no longer responding to radioactive iodine."],
+ [/\bR0\b|\bR1\b/,"R0 / R1","수술 절제면에 암이 현미경적으로 남지 않음(R0) 또는 남음(R1)을 뜻합니다.","No (R0) or microscopic (R1) residual cancer at the surgical margin."],
+ [/HLA-A\*02/,"HLA-A*02","특정 조직적합 항원형입니다. TCR 기반 세포치료는 이 유형의 환자에게만 쓸 수 있습니다.","A specific tissue type; TCR-based cell therapies work only in patients with this type."],
+ [/FLT3|NPM1|IDH|KMT2A/,"FLT3 · NPM1 · IDH · KMT2A","급성골수성백혈병 등에서 치료를 고르는 유전자 이상으로, 각각 전용 표적약이 있습니다.","Gene alterations (e.g. in AML) that each have dedicated targeted drugs."],
+ [/KIT/,"KIT 변이","위장관기질종양(GIST)의 주된 원인 유전자 변이로, 이마티닙 등 KIT 억제제의 대상입니다.","Main driver mutation in GIST; target of KIT inhibitors such as imatinib."],
+ [/FGFR/,"FGFR","FGFR 유전자 변이·융합·과발현으로, FGFR 표적 치료의 대상입니다.","FGFR mutation, fusion or overexpression; target of FGFR-directed drugs."],
+ [/AYA/,"AYA","청소년·젊은 성인(대략 15~39세) 환자군입니다.","Adolescents and young adults (about 15–39 years)."]];
+function cx(k){return CXI[state.lang==="en"?"en":"ko"][k]}
+var CXSEL=".badge,.grade,.evb,.chip,.nwb,.cph,.cln,.csub,.cstg,.tlty,.nvchip";
+function cxKeys(el){var K=[],tx=(el.textContent||"").trim(),cl=el.classList;
+  function grade(s){String(s).replace(/(?:^|[^0-9A-Za-z])(1|2A|2B|3)(?![0-9A-Za-z])/g,function(_,c){var k="c"+c;if(K.indexOf(k)<0)K.push(k)});
+    if(/preferred/i.test(s)&&!/other/i.test(s))K.push("pref");else if(/other recommended|기타 권고/i.test(s))K.push("other");if(/useful/i.test(s))K.push("useful")}
+  if(cl.contains("badge")){var m=/(?:^|\s)s-([A-Z])/.exec(el.className);if(m)K.push("st_"+m[1]);var rg=el.querySelector(".rg");var full=el.getAttribute("title")||"";grade(rg?rg.textContent+" "+full.split(" — ")[1]:"");return K}
+  if(cl.contains("grade")){grade(tx);return K}
+  if(cl.contains("evb"))return ["evb"];
+  if(cl.contains("nvchip"))return ["nv"];
+  if(cl.contains("nwb")){var n=/k-(add|mod|upd)/.exec(el.className);return n?["n_"+n[1]]:[]}
+  if(cl.contains("cstg")){var g=/g-(\w+)/.exec(el.className);return g?["g_"+g[1]]:[]}
+  if(cl.contains("tlty")){var y=/k-(\w+)/.exec(el.className);return y?["t_"+y[1]]:[]}
+  if(cl.contains("csub"))return ["sub"];
+  if(cl.contains("cph")||(cl.contains("chip")&&/^Phase\s/i.test(tx))){var p=tx.replace(/Phase|상/gi,"").trim();return [/2\s*\/\s*3/.test(p)?"p23":/3/.test(p)?"p3":/2/.test(p)?"p2":/1/.test(p)?"p1":""].filter(Boolean)}
+  if(cl.contains("cln")){var L=CLTI.ko.ln,E=CLTI.en.ln;for(var k in L)if(L[k]===tx||E[k]===tx)return ["l_"+k];return []}
+  if(cl.contains("chip")){if(tx===FLK["2"]||tx===FLE["2"]||tx===CLTI.ko.fl2||tx===CLTI.en.fl2)return ["fl2"];if(tx===FLK.e||tx===FLE.e||tx===CLTI.ko.fle||tx===CLTI.en.fle)return ["fle"];
+    for(var q in PFK)if(PFK[q][0]===tx||PFE[q][0]===tx)return ["pf_"+q];if(/NCCN/.test(tx)&&/(개정|edition|released)/i.test(tx))return ["nv"];}
+  return K}
+function cxHtml(el,K){var en=state.lang==="en",h="";
+  K.forEach(function(k){var v=cx(k);if(!v)return;h+='<div class="cxb"><div class="cxt">'+esc(v[0])+'</div><p>'+esc(v[1])+'</p></div>'});
+  if(K[0]==="sub"){var s=el.textContent||"",G=CXG.filter(function(g){return g[0].test(s)});
+    h='<div class="cxb"><div class="cxt">'+esc(cx("sub")[0])+' <span class="cxq">'+esc(s.trim())+'</span></div><p>'+esc(G.length?cx("sub")[1]:cx("sub")[1].replace(/ 아래는.*$| Terms used.*$/,""))+'</p></div>'+
+      (G.length?'<dl class="cxg">'+G.map(function(g){return '<dt>'+esc(g[1])+'</dt><dd>'+esc(en?g[3]:g[2])+'</dd>'}).join("")+'</dl>':'')}
+  return h}
+function cxClose(){var p=document.getElementById("chipx");if(p&&!p.hidden){p.hidden=true;if(cxClose.src)cxClose.src.classList.remove("cxon");cxClose.src=null}}
+function cxOpen(el,K){var p=document.getElementById("chipx");if(!p){p=document.createElement("div");p.id="chipx";p.className="chipx";p.setAttribute("role","dialog");p.hidden=true;
+    p.innerHTML='<button type="button" class="chipx-x"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button><div class="chipx-b"></div>';document.body.appendChild(p);
+    p.querySelector(".chipx-x").addEventListener("click",function(e){e.stopPropagation();cxClose()})}
+  if(cxClose.src===el&&!p.hidden){cxClose();return}
+  cxClose();p.querySelector(".chipx-x").setAttribute("aria-label",cx("close"));p.querySelector(".chipx-b").innerHTML=cxHtml(el,K);p.setAttribute("aria-label",(cx(K[0])||[""])[0]);
+  p.hidden=false;p.style.visibility="hidden";p.style.left="0px";p.style.top="0px";
+  var r=el.getBoundingClientRect(),vw=document.documentElement.clientWidth,vh=window.innerHeight,w=p.offsetWidth,hh=p.offsetHeight,M=12;
+  var x=Math.max(M,Math.min(vw-w-M,r.left+r.width/2-w/2)),y=r.bottom+8;if(y+hh>vh-M&&r.top-8-hh>M)y=r.top-8-hh;else if(y+hh>vh-M)y=Math.max(M,vh-M-hh);
+  p.style.left=x+"px";p.style.top=y+"px";p.style.visibility="";el.classList.add("cxon");cxClose.src=el;cxOpen.t=Date.now()}
+document.addEventListener("click",function(e){var p=document.getElementById("chipx");if(p&&!p.hidden&&p.contains(e.target))return;
+  var el=e.target.closest&&e.target.closest(CXSEL);
+  if(el&&!el.closest("button,a,.dd,.fsc,#chipx")){var K=cxKeys(el);if(K.length){e.preventDefault();e.stopPropagation();cxOpen(el,K);return}}
+  cxClose()},true);
+document.addEventListener("keydown",function(e){if(e.key==="Escape")cxClose()});
+window.addEventListener("scroll",function(e){var p=document.getElementById("chipx");if(Date.now()-(cxOpen.t||0)<450)return;if(p&&!p.hidden&&!(e.target&&e.target.nodeType===1&&p.contains(e.target)))cxClose()},true);
+window.addEventListener("resize",cxClose);window.addEventListener("onc-lang",cxClose);
+setTimeout(function(){try{if(!localStorage.getItem("onc-db-cxhint")){uxToast(cx("hint"));localStorage.setItem("onc-db-cxhint","1")}}catch(e){}},1200);
 applyLang();
 render();
 setHH();
