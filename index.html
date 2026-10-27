@@ -2204,7 +2204,7 @@ function viewBrowse(){
     return '<div class="pipeblk" id="p-'+(k==="?"?"u":k)+'"><div class="pipehd"><span class="lg pl">'+(k==="?"?"?":lgl(k))+'</span><span>'+(k==="?"?t("pipeUnk"):t("pipeSec"))+'</span><em>'+t("pipeScope")+'</em></div><ul class="pipe">'+its.map(function(p){return pipeHtml(p,"")}).join("")+'</ul></div>'}
   function refB(){var ks=Object.keys(ST);
     return '<div class="refs"><div class="refh">'+t("refSec")+'</div><dl>'+
-      '<dt>NCCN</dt><dd class="mono">'+esc(c.nccn.v)+' · '+esc(c.nccn.d)+' · '+esc(c.nccn.f)+'</dd>'+
+      '<dt>NCCN</dt><dd class="mono">'+esc(c.nccn.v)+' · '+esc(c.nccn.d)+' · '+esc(c.nccn.f)+(c.nccn.nv?' <span class="chip e" title="'+esc((state.lang==="en"?"Detected ":"감지일 ")+(c.nccn.nvd||""))+'">'+esc((state.lang==="en"?"New ":"신규 ")+c.nccn.nv+(state.lang==="en"?" released · cross-check pending":" 개정 감지 · 대조 필요"))+'</span>':'')+'</dd>'+
       (c.scope?'<dt>'+t("scopeK")+'</dt><dd>'+esc(T(c.scope))+'</dd>':'')+
       '<dt>'+t("legTitle")+'</dt><dd class="lgl">'+ks.map(function(k){return '<span><span class="badge s-'+k+'">'+ST[k][0]+'</span>'+esc(ST[k][1])+'</span>'}).join("")+'</dd>'+
       ((c.srcs&&c.srcs.length)?'<dt>'+t("srcSec")+'</dt><dd><ul class="srcs">'+c.srcs.map(function(s){return '<li><a href="'+esc(s[1])+'" target="_blank" rel="noopener noreferrer">'+esc(T(s[0]))+'</a></li>'}).join("")+'</ul></dd>':'')+
