@@ -1202,13 +1202,13 @@ const SOLID = [
  {name:"HR+/HER2−",lines:[
   {lg:"3L+",label:"3차 이후",items:[R("사시투주맙 고비테칸 (TROPiCS-02)","화학요법 2–4회 후(HER2-low 한정 아님). PFS 5.5 vs 4.0개월 (HR 0.66), OS 14.4 vs 11.2개월 (HR 0.79)","N||","HR+ 3L 항목의 등급은 이번 라운드에서 대조하지 않음.")]},
   {lg:"1L",label:"1차",items:[
-   R("CDK4/6 억제제(팔보시클립·리보시클립·아베마시클립) + 아로마타제 억제제","확립된 표준. 무작위 3상에서 OS 이득이 확인된 것은 리보시클립 (MONALEESA-2: 중앙 OS 63.9 vs 51.4개월, HR 0.76. NEJM 2022;386:942, PMID 35263519). PALOMA-2, MONARCH 3은 OS 개선이 입증되지 않음 (리뷰: Oncology 2026, PMID 42842525).","M||","NCCN 본문에 3종 모두 수록. 등급은 레짐별 표에서 별도 확인 필요. 팔보시클립의 실사용 점유율에 관한 기존 서술은 근거를 확인하지 못해 삭제함."),
+   R("CDK4/6 억제제(팔보시클립·리보시클립·아베마시클립) + 아로마타제 억제제","확립된 표준. 무작위 3상에서 OS 이득이 확인된 것은 리보시클립 (MONALEESA-2: 중앙 OS 63.9 vs 51.4개월, HR 0.76. NEJM 2022;386:942, PMID 35263519). PALOMA-2, MONARCH 3은 OS 개선이 입증되지 않음 (리뷰: Oncology 2026, PMID 42842525).","L|1 (AI+리보시클립) / 2A (AI+아베마시클립·팔보시클립)|Preferred|p.88","NCCN 본문에 3종 모두 수록. 등급은 레짐별 표에서 별도 확인 필요. 팔보시클립의 실사용 점유율에 관한 기존 서술은 근거를 확인하지 못해 삭제함."),
    R("Camizestrant + CDK4/6 억제제 (1차 중 ESR1 변이 출현 시 전환, SERENA-6)","ctDNA 감시 중 ESR1 변이가 출현하고 영상학적 진행이 없을 때 AI를 Camizestrant로 교체. PFS 16.0 vs 9.2개월 (HR 0.44, 95% CI 0.31–0.60), PFS2 HR 0.63, OS 미보고. Lancet Oncol 2026 (PMID 42442380), 1차 분석 NEJM 2025 (PMID 40454637). FDA 승인 2026-09-04","N||","FDA 승인 후 추가한 항목. NCCN 원문과는 아직 대조하지 않음. ODAC는 2026-04-30 6:3으로 반대 의견을 냈음(2차 보도). ctDNA 반복 검사가 전제됨.","2")]},
-  {lg:"2L",label:"2차 (바이오마커 분기)",items:[R("T-DXd (HER2-low·ultralow, 내분비요법 후)","DESTINY-Breast06: 내분비요법 후·전이성 화학요법 전, HER2-low PFS 13.2 vs 8.1개월 (HR 0.62). DESTINY-Breast04는 화학요법 1–2회 후","M||p.91","HER2 IHC 0+·1+·2+ 설정에서 Other recommended로 수록(p.91)."),
+  {lg:"2L",label:"2차 (바이오마커 분기)",items:[R("T-DXd (HER2-low·ultralow, 내분비요법 후)","DESTINY-Breast06: 내분비요법 후·전이성 화학요법 전, HER2-low PFS 13.2 vs 8.1개월 (HR 0.62). DESTINY-Breast04는 화학요법 1–2회 후","L|2A|Other recommended|p.91","HER2 IHC 0+·1+·2+ 설정에서 Other recommended로 수록(p.91)."),
    
    R("카피바서팁 + 풀베스트란트 (PIK3CA/AKT1/PTEN 변이)","AKT 경로 변이 시 선택","L|1|Preferred|p.95",""),
-   R("엘라세스트란트 (ESR1 변이)","경구 SERD","M||p.95","수록 확인. 등급 미추출."),
-   R("알펠리십 (PIK3CA 변이)","PI3K 억제제 병용","M||p.10","본문 각주에서 수록 확인."),
+   R("엘라세스트란트 (ESR1 변이)","경구 SERD","L|2A|Other recommended|p.95","수록 확인. 등급 미추출."),
+   R("알펠리십 (PIK3CA 변이)","PI3K 억제제 병용","L|1|Preferred|p.95","본문 각주에서 수록 확인."),
    R("CDK4/6i 교체 또는 화학요법","단일 SOC 부재. 바이오마커 결과에 따라 분화","N||","")]}]},
  {name:"HER2+",lines:[
   {lg:"1L",label:"1차",items:[
@@ -1216,8 +1216,8 @@ const SOLID = [
    R("T-DXd + 퍼투주맙 (DESTINY-Breast09)","PFS 우위. 기존 정리에서는 ‘두 옵션 병기’로 서술함.","D|2A|Other recommended|p.10","정정: NCCN v8.2026은 Category 2A, Other recommended로 수록. THP(Category 1, Preferred)와 동급이 아님."),
    R("투카티닙 + 트라스투주맙 + 퍼투주맙 유지요법 (1차 유도요법 후, HER2CLIMB-05)","탁산 + HP 유도요법 후 진행 없는 환자의 유지요법. PFS 24.9 vs 16.3개월 (HR 0.641, 95% CI 0.514–0.799), OS 미성숙. J Clin Oncol 2025 (PMID 41369677). FDA 승인 2026-10-07","N||","FDA 승인 후 추가한 항목. NCCN 원문과는 아직 대조하지 않음.")]},
   {lg:"2L",label:"2차",items:[
-   R("T-DXd (미투약 시)","2L 표준","M||","HER2+ 2L 수록 확인. 등급 미추출."),
-   R("투카티닙 + 트라스투주맙 + 카페시타빈 (뇌전이 활성)","HER2CLIMB","M||p.10","투카티닙 조합 수록 확인.")]}]},
+   R("T-DXd (미투약 시)","2L 표준","L|1|Preferred|p.93","HER2+ 2L 수록 확인. 등급 미추출."),
+   R("투카티닙 + 트라스투주맙 + 카페시타빈 (뇌전이 활성)","HER2CLIMB","L|1|Preferred|p.93","투카티닙 조합 수록 확인.")]}]},
  {name:"TNBC",lines:[
   {lg:"1L",label:"1차",items:[
    R("사시투주맙 고비테칸 + 펨브롤리주맙 (PD-L1 CPS≥10)","ASCENT-04/KEYNOTE-D19, PFS HR 0.65. FDA 승인 2026-06-24","L|1|Preferred|p.92",""),
@@ -1239,26 +1239,26 @@ const SOLID = [
 {id:"colon",g:"solid",name:"대장암",en:"Metastatic colorectal cancer",nccn:{f:"colon.pdf",v:"v2.2026",d:"2026-04-07"},
  sections:[
  {name:"RAS-wt·BRAF-wt, 좌측",lines:[
-  {lg:"1L",label:"1차",items:[R("FOLFOX 또는 FOLFIRI + 세툭시맙(또는 파니투무맙)","좌측 원발 한정","M||p.46","FOLFIRI + 항EGFR은 ‘좌측만’ 조건으로 수록.")]},
-  {lg:"2L",label:"2차",items:[R("백금 기반 전환 ± 베바시주맙 / 지브-애플리버셉트","","M||p.47","")]},
+  {lg:"1L",label:"1차",items:[R("FOLFOX 또는 FOLFIRI + 세툭시맙(또는 파니투무맙)","좌측 원발 한정","L|2A||p.46","FOLFIRI + 항EGFR은 ‘좌측만’ 조건으로 수록.")]},
+  {lg:"2L",label:"2차",items:[R("백금 기반 전환 ± 베바시주맙 / 지브-애플리버셉트","","D|2A||p.47","NCCN 대조: NCCN에서 지브-애플리버셉트(및 라무시루맙)는 옥살리플라틴 치료 후 FOLFIRI/이리노테칸과만 병용되고, 백금 기반(FOLFOX/CAPEOX) 전환은 이리노테칸 치료 후 ± 베바시주맙으로만 수록돼 조합이 다름.")]},
   {lg:"3L+",label:"3차 이후",items:[
-   R("FTD/TPI ± 베바시주맙","베바시주맙 병용 선호","M|| Preferred(병용)|p.46","NCCN 표에 ‘Bevacizumab combo preferred’ 표기."),
-   R("레고라페닙","","M||p.46",""),
-   R("프루퀸티닙","","M||p.46","")]}]},
+   R("FTD/TPI ± 베바시주맙","베바시주맙 병용 선호","L|2A|Preferred|p.46","NCCN 표에 ‘Bevacizumab combo preferred’ 표기."),
+   R("레고라페닙","","L|2A||p.46",""),
+   R("프루퀸티닙","","L|2A||p.46","")]}]},
  {name:"RAS 변이",lines:[
-  {lg:"1L",label:"1차",items:[R("FOLFOX / FOLFIRI / FOLFOXIRI + 베바시주맙","","M||p.53","FOLFOXIRI는 고용량 5-FU 때문에 FOLFIRINOX 권고 문구가 함께 있음. 근거 임상(AVF2107g·TRIBE)은 RAS 변이 한정 시험이 아님.")]},
-  {lg:"3L+",label:"KRAS G12C, 2차 이후",items:[R("소토라십(또는 아다그라십) + 파니투무맙 / 세툭시맙","소토라십+파니투무맙 FDA 승인 2025-01. 아다그라십+세툭시맙은 확증 3상 KRYSTAL-10에서 PFS·OS 모두 유의한 개선을 보이지 못해(PFS HR 0.89, OS HR 0.83) FDA 가속승인이 철회됨(2026-09-01 발효)","M||p.47","NCCN v2.2026(2026-04-07)은 철회 이전 판으로 아다그라십 병용이 수록돼 있음. 다음 개정에서 삭제 여부 확인 필요. 철회 사실은 FDA 철회 목록을 인용한 CancerNetwork 보도(2026-09-08) 기준.","2")]}]},
+  {lg:"1L",label:"1차",items:[R("FOLFOX / FOLFIRI / FOLFOXIRI + 베바시주맙","","D|2A||p.47","FOLFOXIRI는 고용량 5-FU 때문에 FOLFIRINOX 권고 문구가 함께 있음. 근거 임상(AVF2107g·TRIBE)은 RAS 변이 한정 시험이 아님. NCCN 대조: NCCN은 FOLFOXIRI 대신 FOLFIRINOX(± 베바시주맙)를 수록하며 고용량 5-FU 때문에 FOLFOXIRI는 권고하지 않음(p.53 각주 s).")]},
+  {lg:"3L+",label:"KRAS G12C, 2차 이후",items:[R("소토라십(또는 아다그라십) + 파니투무맙 / 세툭시맙","소토라십+파니투무맙 FDA 승인 2025-01. 아다그라십+세툭시맙은 확증 3상 KRYSTAL-10에서 PFS·OS 모두 유의한 개선을 보이지 못해(PFS HR 0.89, OS HR 0.83) FDA 가속승인이 철회됨(2026-09-01 발효)","L|2A||p.47","NCCN v2.2026(2026-04-07)은 철회 이전 판으로 아다그라십 병용이 수록돼 있음. 다음 개정에서 삭제 여부 확인 필요. 철회 사실은 FDA 철회 목록을 인용한 CancerNetwork 보도(2026-09-08) 기준.","2")]}]},
  {name:"BRAF V600E",lines:[
-  {lg:"1L",label:"1차",items:[R("엔코라페닙 + 세툭시맙 + FOLFOX 또는 FOLFIRI","BREAKWATER: PFS 12.8 vs 7.1개월 (HR 0.53), OS 30.3 vs 15.1개월 (HR 0.49). FDA 가속승인 2024-12-20(ORR), 정규승인 2026-02-24(mFOLFOX6 또는 FOLFIRI 병용)","M||p.56","NCCN은 FOLFOX, FOLFIRI, CAPEOX 병용을 모두 수록(p.56–57). FOLFIRI 병용 근거로 BREAKWATER ASCO 2026 초록을 인용(p.61). 등급 미추출.")]}]},
+  {lg:"1L",label:"1차",items:[R("엔코라페닙 + 세툭시맙 + FOLFOX 또는 FOLFIRI","BREAKWATER: PFS 12.8 vs 7.1개월 (HR 0.53), OS 30.3 vs 15.1개월 (HR 0.49). FDA 가속승인 2024-12-20(ORR), 정규승인 2026-02-24(mFOLFOX6 또는 FOLFIRI 병용)","L|2A|Preferred|p.48","NCCN은 FOLFOX, FOLFIRI, CAPEOX 병용을 모두 수록(p.56–57). FOLFIRI 병용 근거로 BREAKWATER ASCO 2026 초록을 인용(p.61). 등급 미추출.")]}]},
  {name:"MSI-H/dMMR",lines:[
   {lg:"1L",label:"1차",items:[
-   R("펨브롤리주맙","KEYNOTE-177: PFS 16.5 vs 8.2개월 (HR 0.59). OS HR 0.74 (0.53–1.03), 사전 유의수준 미충족(대조군 60% 교차투여)","M||p.55",""),
-   R("니볼루맙 + 이필리무맙","","M||p.25, 49","")]}]},
+   R("펨브롤리주맙","KEYNOTE-177: PFS 16.5 vs 8.2개월 (HR 0.59). OS HR 0.74 (0.53–1.03), 사전 유의수준 미충족(대조군 60% 교차투여)","L|2A||p.49",""),
+   R("니볼루맙 + 이필리무맙","","L|2A (집중치료 가능) / 2B (집중치료 부적합, Discussion)||p.49","")]}]},
  {name:"HER2+ (RAS-wt)",lines:[
-  {lg:"2L",label:"2차 이후 (1L 편입 시도 중)",items:[R("투카티닙 + 트라스투주맙 (MOUNTAINEER)","","M||p.46","")]}]}],
+  {lg:"2L",label:"2차 이후 (1L 편입 시도 중)",items:[R("투카티닙 + 트라스투주맙 (MOUNTAINEER)","","L|2A||p.46","")]}]}],
  extra:[
-  R("티슬렐리주맙 · 더발루맙 (dMMR/MSI-H)","NCCN 추가 수록","M||p.55–56",""),
-  R("T-DXd (HER2+)","NCCN 추가 수록","M||p.56","")],
+  R("티슬렐리주맙 · 더발루맙 (dMMR/MSI-H)","NCCN 추가 수록","L|2A||p.49",""),
+  R("T-DXd (HER2+)","NCCN 추가 수록","D|2A||p.46","NCCN 대조: NCCN은 HER2 IHC 3+ 과발현에 한정해 옥살리플라틴·이리노테칸 이후 또는 3차 이상(및 종양불문 요법)으로만 수록하므로 'HER2+' 전체보다 대상이 좁음.")],
  pipe:[
   P("프레켐타바르트 토센테칸 (CEACAM5 ADC)","","e",["3L+"],"등록 정보 확인 — PROCEADE-CRC-03(NCT07549412): 기치료 전이성 대장암, 대조군이 트리플루리딘/티피라실 + 베바시주맙이어서 3L+로 분류"),
   P("JSKN003, TQB2102 (HER2 이중특이 ADC)","","e",[],"차수 미확정 — HER2 이중특이 ADC 2종으로 기재되어 있고 차수·시험 정보가 없음"),
@@ -1279,7 +1279,7 @@ const SOLID = [
  {name:"HER2−, CLDN18.2+",lines:[
   {lg:"1L",label:"1차",items:[R("졸베투시맙 + 화학요법 (SPOTLIGHT/GLOW)","","L|1||p.43","")]},
   {lg:"2L",label:"2차",items:[R("라무시루맙 + 파클리탁셀","","L|1||p.45","")]}]}],
- extra:[R("자니다타맙 + 화학요법 ± 티슬렐리주맙 (HER2+ 1L)","NCCN 수록. 시스플라틴 병용은 Category 2B","M||p.4","본 DB 미수록 항목")],
+ extra:[R("자니다타맙 + 화학요법 ± 티슬렐리주맙 (HER2+ 1L)","NCCN 수록. 시스플라틴 병용은 Category 2B","D|2A (옥살리플라틴 병용 및 시스플라틴+티슬렐리주맙 4제) / 2B (시스플라틴+자니다타맙 3제)|Preferred|p.43","본 DB 미수록 항목 NCCN 대조: 2B는 티슬렐리주맙 없는 시스플라틴+자니다타맙 3제에만 해당하며, 시스플라틴+자니다타맙+티슬렐리주맙 4제는 2A임.")],
  pipe:[
   P("DESTINY-Gastric05","1L HER2+, T-DXd + 화학 ± 펨브롤리주맙 vs 트라스투주맙 + 화학 ± 펨브롤리주맙","e",["1L"],"항목 기재 기준 — 1L HER2+로 기재"),
   P("Artemide-Gastric01","릴베고스타맙 + T-DXd, 1L HER2+","e",["1L"],"항목 기재 기준 — 1L HER2+로 기재"),
@@ -1291,7 +1291,7 @@ const SOLID = [
   {lg:"1L",label:"1차",items:[
    R("펨브롤리주맙 + 화학 (KEYNOTE-590, NCT03189719)","","L|1||p.61","ESCC, PD-L1 CPS ≥1에서 Category 1. 선암은 CPS ≥5에서 Category 1(p.59). SC 제형 대체 문구 수록(p.9)."),
    R("니볼루맙 + 화학","","L|1||p.61","ESCC, PD-L1 CPS ≥1에서 Category 1."),
-   R("니볼루맙 + 이필리무맙","","M||p.61","PD-L1 CPS ≥1 조건으로 수록. Category 미추출."),
+   R("니볼루맙 + 이필리무맙","","L|2A|Preferred|p.61","PD-L1 CPS ≥1 조건으로 수록. Category 미추출."),
    R("티슬렐리주맙 + 화학 (RATIONALE-306, NCT03783442)","2026 NMA: 장기 OS 유사, PFS는 니볼루맙+화학 대비 유의 우위","L|1||p.61","ESCC, PD-L1 CPS ≥1에서 Category 1.")]},
   {lg:"2L",label:"2차",items:[
    R("티슬렐리주맙 (RATIONALE-302, NCT03430843)","화학 대비 OS 우위(8.6 vs 6.3개월). FDA 적응증은 PD-(L)1 억제제를 포함하지 않은 선행 화학 후로 한정","L|1||p.63","2차 이후 ESCC 옵션으로 Category 1."),
@@ -1312,7 +1312,7 @@ const SOLID = [
    R("졸베투시맙 + 플루오로피리미딘 + 옥살리플라틴","SPOTLIGHT/GLOW (NCCN 참고문헌 41, 42)","L|1 (EGJ) / 2A (esophageal)|Preferred|p.59","CLDN18.2 양성. EGJ 선암은 Category 1, 식도 선암은 2A.")]},
   {lg:"2L",label:"2차",items:[
    R("라무시루맙 + 파클리탁셀","RAINBOW (NCCN 참고문헌 71)","L|1 (EGJ) / 2A (esophageal)|Preferred|p.62","EGJ 선암은 Category 1, 식도 선암은 2A.")]}]}],
- extra:[R("MSI-H/dMMR 선암: 면역항암제 단독 또는 화학 병용 (PD-L1 무관)","펨브롤리주맙, 도스탈리맙, 니볼루맙 + 이필리무맙, 플루오로피리미딘 + 옥살리플라틴 + 니볼루맙 또는 펨브롤리주맙","M||p.59","본 DB 미수록 항목. 1차 Preferred 열에 수록.")],
+ extra:[R("MSI-H/dMMR 선암: 면역항암제 단독 또는 화학 병용 (PD-L1 무관)","펨브롤리주맙, 도스탈리맙, 니볼루맙 + 이필리무맙, 플루오로피리미딘 + 옥살리플라틴 + 니볼루맙 또는 펨브롤리주맙","L|2A|Preferred|p.59","본 DB 미수록 항목. 1차 Preferred 열에 수록.")],
  pipe:[
   P("카도닐리맙 (PD-1/CTLA-4)","2상까지 확인 (NCT06681285)","v",["2L"],"등록 정보 확인 — NCT06681285: 재발·전이성 ESCC 2차 이후 치료(공식 제목), 2상 단일군. 적격 기준은 미치료 환자도 허용"),
   P("이보네스키맙 (PD-1/VEGF)","2상까지 확인 (NCT07188103)","v",["2L"],"등록 정보 확인 — NCT07188103: ESCC 2차 치료(1차 실패 후), 이보네시맙 + 단기 저분할 방사선, 2상 단일군")],
@@ -1328,8 +1328,8 @@ const SOLID = [
    R("렌바티닙 / 소라페닙 (TKI 미투약 시)","","L|1||p.27",""),
    R("카보잔티닙","","L|1||p.27",""),
    R("라무시루맙 (AFP ≥400)","","L|1||p.27",""),
-   R("레고라페닙 (소라페닙 후)","","M||p.17","")]},
-  {lg:"3L+",label:"3차 이후",items:[R("남은 TKI 순차 사용, 펨브롤리주맙 (HBV 관련, PD-(L)1 미투여 후) / 니볼루맙 + 이필리무맙 (소라페닙 후)","","M||p.27","이필리무맙 + 니볼루맙은 Category 1로 수록.")]}]}],
+   R("레고라페닙 (소라페닙 후)","","L|1||p.27","")]},
+  {lg:"3L+",label:"3차 이후",items:[R("남은 TKI 순차 사용, 펨브롤리주맙 (HBV 관련, PD-(L)1 미투여 후) / 니볼루맙 + 이필리무맙 (소라페닙 후)","","D|1 (이필리무맙+니볼루맙·렌바티닙·소라페닙) / 2B (펨브롤리주맙)|Other recommended|p.27","이필리무맙 + 니볼루맙은 Category 1로 수록. NCCN 대조: NCCN은 후속치료를 '1차 Preferred/Other Recommended 권고 고려' 칸으로만 두며, 펨브롤리주맙을 HBV 관련으로 한정하지 않고 이필리무맙+니볼루맙도 소라페닙 후가 아니라 1차 Preferred(category 1, 후속 사용은 CTLA-4 미투여 시)로 수록함.")]}]}],
  extra:[R("이필리무맙 + 니볼루맙 · 더발루맙 단독","NCCN 추가 수록","L|1||p.27","")],
  pipe:[
   P("티슬렐리주맙 기반 병용","","e",[],"차수 미확정 — 차수 정보가 없음"),
@@ -1340,12 +1340,12 @@ const SOLID = [
 {id:"pancreatic",g:"solid",name:"췌장암",en:"Metastatic PDAC",nccn:{f:"pancreatic.pdf",v:"v4.2026",d:"2026-09-11"},
  sections:[{name:"전이성",lines:[
   {lg:"1L",label:"1차",items:[
-   R("FOLFIRINOX 또는 젬시타빈 + nab-파클리탁셀","ECOG 0–1. FOLFIRINOX(2011)·gem/nab-P(2013) 이후 두 축 유지; NALIRIFOX는 NAPOLI 3(OS HR 0.83)로 2024-02 FDA 승인","M||p.7–8","NCCN 각주는 NALIRIFOX가 gem/nab-P보다 우월하다는 고수준 근거를 인정하되 사용에 신중 문구를 둠(p.8)."),
+   R("FOLFIRINOX 또는 젬시타빈 + nab-파클리탁셀","ECOG 0–1. FOLFIRINOX(2011)·gem/nab-P(2013) 이후 두 축 유지; NALIRIFOX는 NAPOLI 3(OS HR 0.83)로 2024-02 FDA 승인","L|1|Preferred|p.57","NCCN 각주는 NALIRIFOX가 gem/nab-P보다 우월하다는 고수준 근거를 인정하되 사용에 신중 문구를 둠(p.8)."),
    R("다락손라십 (PS 0–1)","NCCN 1L Useful in certain circumstances(2B). 1차 근거 미발표, FDA 1차 적응증은 다제 전신요법 비적합 환자 한정","L|2B|UCC|p.4","1L 항목은 PANC-G 5–6에 신규 추가.")]},
   {lg:"2L",label:"2차",items:[
    R("다락손라십 (RASolute 302)","전체 무작위군 500명(NCT06625320): OS 13.2 vs 6.7개월 (HR 0.40, 0.30–0.53), PFS 7.2 vs 3.6개월 (HR 0.49), ORR 30% vs 11%. FDA 승인 2026-08-26 (RASONQUE, FDA 공지 확인)","L|1|Preferred|p.4","PS 0–1·PS 2는 Preferred, PS 3은 UCC. 재발(<6개월)에도 Category 1. FDA 승인 후 발행된 판(v4.2026, 2026-09-11)에 수록. 기존 정리의 ‘FDA NDA 제출 예정’은 승인으로 갱신됨."),
-   R("리포좀 이리노테칸 + 5-FU/LV (젬시타빈 후)","NAPOLI-1","M||p.60",""),
-   R("FOLFOX / FOLFIRI / OFF (젬시타빈 기반 치료 후)","CONKO-003 양성, PANCREOX 음성. FOLFIRINOX 후 사용을 뒷받침하는 무작위 근거 없음","M||","")]}]}],
+   R("리포좀 이리노테칸 + 5-FU/LV (젬시타빈 후)","NAPOLI-1","L|1 (전이성) / 2A (그 외)|Preferred|p.60",""),
+   R("FOLFOX / FOLFIRI / OFF (젬시타빈 기반 치료 후)","CONKO-003 양성, PANCREOX 음성. FOLFIRINOX 후 사용을 뒷받침하는 무작위 근거 없음","L|2A|Preferred|p.60","")]}]}],
  extra:[],
  pipe:[
   P("KRAS G12D/G12C 선택적 억제제 (졸돈라십 등)","1L 병용(mFOLFIRINOX/GnP) 초기 임상","2",["1L"],"항목 기재 기준 — 1L 병용(초기 임상)으로 기재"),
@@ -1357,17 +1357,17 @@ const SOLID = [
  {name:"신규 진단 (1차 치료)",lines:[
   {lg:"1L",label:"1차 항암 (수술 전후)",items:[R("카보플라틴 + 파클리탁셀 (3주 간격) ± 베바시주맙","일차 종양감축술 후 6주기 표준. 베바시주맙 병용 후 유지(GOG-0218): PFS 14.1 vs 10.3개월 (HR 0.717, 95% CI 0.625–0.824), OS 차이 없음. N Engl J Med 2011 (PMID 22204724). ICON7: PFS HR 0.81 (95% CI 0.70–0.94), 효과는 12개월에 최대이고 24개월에 감소. N Engl J Med 2011 (PMID 22204725)","N||","NCCN 원문과는 아직 대조하지 않음. 수술 전 항암(NACT) 3~4주기 후 간격 종양감축술도 선택지이며, 이후 BRCA·HRD 결과에 따라 아래 1차 유지요법으로 이어짐.")]},
   {lg:"1L",label:"1차 유지 (수술 + 백금 후)",items:[
-   R("올라파립 단독 (BRCA 변이, SOLO-1) / 올라파립 + 베바시주맙 (HRD 양성, PAOLA-1)","","M||p.5–6","PARP 유지요법 논의 및 레짐 수록."),
-   R("니라파립 (HRD+, PRIMA)","","M||p.4–6",""),
-   R("베바시주맙 단독 (HR-proficient)","","M||","")]}]},
+   R("올라파립 단독 (BRCA 변이, SOLO-1) / 올라파립 + 베바시주맙 (HRD 양성, PAOLA-1)","","L|1||p.11","PARP 유지요법 논의 및 레짐 수록."),
+   R("니라파립 (HRD+, PRIMA)","","L|1 (BRCA 변이) / 2A (BRCA wt·HRD)||p.11",""),
+   R("베바시주맙 단독 (HR-proficient)","","L|2A||p.11","")]}]},
  {name:"재발 (백금 민감 · 저항)",lines:[
-  {lg:"2L",label:"백금 민감 재발",items:[R("백금 기반 재유도 + 베바시주맙 유지","PARP 미투약 시","M||","")]},
+  {lg:"2L",label:"백금 민감 재발",items:[R("백금 기반 재유도 + 베바시주맙 유지","PARP 미투약 시","L|2A (백금 병용 ± Bev) / 1 (첫 재발 백금 병용 자체)|Preferred|p.54","")]},
   {lg:"2L",label:"백금 저항",items:[
-   R("미르베툭시맙 소라반탄신 (FRα≥75%)","MIRASOL 확증 3상","M||p.54–55","단독요법은 FRα 75% 이상 조건으로 수록."),
+   R("미르베툭시맙 소라반탄신 (FRα≥75%)","MIRASOL 확증 3상","L|1|Preferred|p.55","단독요법은 FRα 75% 이상 조건으로 수록."),
    R("미르베툭시맙 + 베바시주맙 (FRα≥50%)","","L|2B||p.54",""),
    R("Pembrolizumab + 주 1회 Paclitaxel ± Bevacizumab (PD-L1 CPS≥1, KEYNOTE-B96)","백금 저항성 재발, 이전 전신치료 1~2회. CPS≥1 PFS 8.3 vs 7.2개월 (HR 0.72), OS 18.2 vs 14.0개월 (HR 0.76). Lancet 2026 (PMID 41974150). FDA 승인 2026-02-10 (22C3 동반진단)","N||","FDA 승인 후 추가한 항목. NCCN 원문과는 아직 대조하지 않음."),
    R("Relacorilant + Nab-paclitaxel (ROSELLA)","백금 저항성 재발, 이전 치료 1~3회(Bevacizumab 포함). PFS(BICR) 6.54 vs 5.52개월 (HR 0.70), OS 16.0 vs 11.9개월 (HR 0.65). Lancet 2026 (PMID 41974149). FDA 승인 2026-03-25","N||","FDA 승인 후 추가한 항목. NCCN 원문과는 아직 대조하지 않음."),
-   R("단일 화학요법 ± 베바시주맙","FRα 무관","M||p.54","")]}]}],
+   R("단일 화학요법 ± 베바시주맙","FRα 무관","L|2A|Preferred|p.55","")]}]}],
  extra:[],
  pipe:[
   P("GLORIOSA","미르베툭시맙 + 베바시주맙 1L 유지","e",["1L"],"항목 기재 기준 — 1L 유지로 기재"),
@@ -1383,15 +1383,15 @@ const SOLID = [
    R("카피바서팁 + 아비라테론 (PTEN 결손, CAPItello-281)","FDA 승인 2026-06-12 (PTEN 결손 mAPMN/S, FDA 인증 검사). rPFS 33.2 vs 25.7개월 (HR 0.81, 0.66–0.98), OS 미성숙. Fizazi Ann Oncol 2026;37:53 (PMID 41120017)","L|2B||p.34–35","NCCN 각주(p.35)가 PTEN 결손 mCSPC에 FDA 승인됨을 명시. 위원 간 이견으로 2B.")]}]},
  {name:"mCRPC",lines:[
   {lg:"2L",label:"HRR/BRCA 변이 (ARPI 후)",items:[R("루카파립","rucaparib: BRCA 변이 mCRPC, ARPI 치료 후 (taxane 전 사용 가능; ATM 등 기타 HRR 변이 제외)","L|1|Preferred|p.8",""),
-   R("올라파립","olaparib: HRR 유전자 변이 mCRPC, enzalutamide/abiraterone 치료 후 (taxane 요건 없음; 효과는 BRCA1/2 중심)","M||",""),
+   R("올라파립","olaparib: HRR 유전자 변이 mCRPC, enzalutamide/abiraterone 치료 후 (taxane 요건 없음; 효과는 BRCA1/2 중심)","L|1 (BRCA1/2m) / 2A (기타 HRRm)|UCC|p.38",""),
    R("Niraparib + 아비라테론 (BRCA2 변이 mHSPC, AMPLITUDE)","HRR 변이 mHSPC 무작위 3상. BRCA 하위군 rPFS HR 0.52 (95% CI 0.37–0.72), HRR 전체 HR 0.63, OS 미성숙(ITT HR 0.79). Nat Med 2025 (PMID 41057655). FDA 승인 2025-12-12는 BRCA2 변이에 한정(BRCA2 하위군 rPFS HR 0.46), EU는 2026-03-09 BRCA1/2로 승인","N||","FDA 승인 후 추가한 항목. NCCN 원문과는 아직 대조하지 않음. 3/4등급 이상반응 75% vs 59%, 빈혈로 수혈 25%.")]},
   {lg:"1L",label:"1·2차",items:[
-   R("ARPI 교체 · 도세탁셀 · 카바지탁셀","","M||p.37","ARPI 교체는 교차내성으로 효과 제한: CARD에서 cabazitaxel 대비 열등(rPFS HR 0.54, OS HR 0.64)"),
-   R("177Lu-PSMA-617 (PSMA+)","PSMAfore(taxane 전), VISION(taxane 후)","M||p.165, 191","")]},
+   R("ARPI 교체 · 도세탁셀 · 카바지탁셀","","D|1 (도세탁셀·카바지탁셀)|Preferred|p.38","ARPI 교체는 교차내성으로 효과 제한: CARD에서 cabazitaxel 대비 열등(rPFS HR 0.54, OS HR 0.64) NCCN 대조: ARPI 교체는 PROS-18의 ARPI 후 칸 어디에도 없고(아비라테론·엔잘루타마이드는 Pre-ARPI 칸에만) 도세탁셀(ARPI 후, cat 1)과 카바지탁셀(도세탁셀 후, cat 1)만 Preferred로 수록됨."),
+   R("177Lu-PSMA-617 (PSMA+)","PSMAfore(taxane 전), VISION(taxane 후)","L|2A (탁산 전) / 1 (탁산 후)|UCC|p.38","")]},
   {lg:"3L+",label:"BRCA 등 HRR 변이 · 뼈전이",items:[
    
    
-   R("라듐-223","","M||p.8","")]}]}],
+   R("라듐-223","","L|1|UCC|p.38","")]}]}],
  extra:[],
  pipe:[
   P("오페베소스타트 (MK-5684, CYP11A1 억제제)","MK-5684-003, -004 (NHA 1개 이후, 2026.3 개시). NCCN 미등재","U",["2L", "3L+"],"보도·공개 자료 확인 — MK-5684-003(NCT06136624)은 NHA와 탁산 이후 mCRPC(3L+). MK-5684-004(NHA 이후 탁산 미치료, 2L)는 시험 설계 기반 추정이며 이번에 직접 확인하지 못함"),
@@ -1407,13 +1407,13 @@ const SOLID = [
   {lg:"1L",label:"1차",items:[
    R("펨브롤리주맙 + 액시티닙 (KEYNOTE-426)","","L|1|Preferred|p.22",""),
    R("니볼루맙 + 카보잔티닙","최종 분석(중앙 추적 5.6년): OS 46.5 vs 35.5개월 (HR 0.79, 0.65–0.96), PFS 16.4 vs 8.3개월 (HR 0.58), ORR 55.7% vs 27.4%. Motzer Ann Oncol 2026;37:33 (PMID 40998092)","L|1|Preferred|p.22",""),
-   R("니볼루맙 + 이필리무맙 (IMDC 중간·고위험)","","M|| Other recommended|p.6","v2.2027에서 2B UCC에서 상향. 상향 후 Category는 미추출."),
-   R("펨브롤리주맙 + 렌바티닙","","M||p.22–23","")]},
+   R("니볼루맙 + 이필리무맙 (IMDC 중간·고위험)","","D|1|Preferred|p.22","v2.2027에서 2B UCC에서 상향. 상향 후 Category는 미추출. NCCN 대조: NCCN v2.2027 ccRCC 1차에서 Ipilimumab+Nivolumab은 category 1 Preferred(위험군 구분 없이 수록)이며, DB의 'Other recommended·2B UCC에서 상향'은 비투명세포 표(KID-D 3 of 3, p.24) 변경 사항임."),
+   R("펨브롤리주맙 + 렌바티닙","","L|1|Preferred|p.22","")]},
   {lg:"2L",label:"2차 (IO 이후)",items:[
    R("벨주티판 + 렌바티닙 (LITESPARK-011)","카보잔티닙 대비 PFS 위험 30% 감소, OS 유의 이득 없음. FDA 승인 2026-09-24","L|2A|Other recommended|p.4, 23","승인 직후 NCCN 반영됨.")]},
   {lg:"2L",label:"후속요법",items:[
-   R("카보잔티닙","","M||p.23",""),
-   R("벨주티판 단독 (LITESPARK-005)","","M||p.23","")]},
+   R("카보잔티닙","","L|2A|Other recommended|p.23",""),
+   R("벨주티판 단독 (LITESPARK-005)","","L|2A|Other recommended|p.23","")]},
   {lg:"adj",label:"보조요법",items:[
    R("펨브롤리주맙 + 벨주티판 (LITESPARK-022)","24개월 DFS 약 81% vs 74%. FDA 승인 2026-06","L|2A||p.4, 8","NCCN은 병기·Grade 조건이 붙은 고위험군에 한정(Stage II Grade 4, Stage III 등).")]}]}],
  extra:[],
@@ -1428,7 +1428,7 @@ const SOLID = [
   {lg:"1L",label:"1차",items:[R("엔포르투맙 베도틴 + 펨브롤리주맙 (EV-302)","886명, 중앙 OS 약 34개월","L||Preferred|p.107","NCCN 본문이 선호 옵션으로 명시. 주위 수술(시스플라틴 부적격)에도 수록(p.4, 42).")]},
   {lg:"2L",label:"2차 이후",items:[
    R("얼다피티닙 (FGFR3 변이, THOR)","사망 위험 36% 감소","L|1||p.7, 46","백금 및 체크포인트 억제제 치료 후 Category 1."),
-   R("PD-(L)1 억제제 (IO 미투약 시) · 화학요법","EV+P 이후 라인은 확립된 표준이 제한적. 이 판단은 문헌 근거 없이 정리한 것임","M||p.6","","e")]}]}],
+   R("PD-(L)1 억제제 (IO 미투약 시) · 화학요법","EV+P 이후 라인은 확립된 표준이 제한적. 이 판단은 문헌 근거 없이 정리한 것임","D|2A (Cis/Gem·ddMVAC) / 2B (Carbo/Gem) / 1 (Pembrolizumab, 백금 후 IO 미투약)|Preferred|p.45","NCCN 대조: EV+P 이후(BL-G 4 of 8 'IO+EV 투여·화학요법 미투여' 칸)에는 백금 화학요법이 Preferred이고 PD-(L)1 억제제는 없으며, 펨브롤리주맙은 '화학요법 후 IO·EV 미투여' 칸에서만 Other recommended(post-platinum category 1)로 수록됨.","e")]}]}],
  extra:[],
  pipe:[
   P("디시타맙 베도틴 (HER2 ADC) + 펨브롤리주맙","NCT05911295, 1L HER2 발현. 단독 2상: HER2+ ORR 54.9%, HER2-low 52.6% (ASCO GU 2026). NCCN 미등재","U",["1L"],"항목 기재 기준 — 1L HER2 발현으로 기재")],
@@ -1438,8 +1438,8 @@ const SOLID = [
  sections:[{name:"재발·전이성",lines:[
   {lg:"1L",label:"1차",items:[
    R("펨브롤리주맙 + 백금/5-FU (KEYNOTE-048)","PD-L1 무관 병용","L|1||p.119",""),
-   R("펨브롤리주맙 단독 (CPS≥1)","","M||p.119",""),
-   R("EXTREME (백금 + 5-FU + 세툭시맙)","KEYNOTE-048 대조군","M||p.119","")]},
+   R("펨브롤리주맙 단독 (CPS≥1)","","L|1|Preferred|p.119",""),
+   R("EXTREME (백금 + 5-FU + 세툭시맙)","KEYNOTE-048 대조군","L|1|Other recommended|p.119","")]},
   {lg:"2L",label:"2·3차",items:[R("1차 ICI 후 확립된 표준 없음 / ICI 미치료 시 니볼루맙·펨브롤리주맙","ICI 미치료 백금 후 진행: CheckMate 141(OS HR 0.70), KEYNOTE-040(OS HR 0.80). 대조군은 세툭시맙·도세탁셀·메토트렉세이트","N||","")]}]}],
  extra:[],
  pipe:[
@@ -1451,9 +1451,9 @@ const SOLID = [
 {id:"melanoma",g:"solid",name:"흑색종",en:"Advanced melanoma",nccn:{f:"cutaneous_melanoma.pdf",v:"v3.2026",d:"2026-09-02"},
  sections:[{name:"진행성·전이성",lines:[
   {lg:"1L",label:"1차",items:[
-   R("항PD-1 단독 / 니볼루맙 + 이필리무맙 / 니볼루맙 + 렐라틀리맙","RELATIVITY-047: PFS 10.1 vs 4.6개월(HR 0.75); 3년 갱신 OS 51.0 vs 34.1개월(HR 0.80, 기술적)","M||p.9–10, 32","렐라틀리맙 조합 수록 확인. 1L 등급은 미추출."),
-   R("BRAF + MEK 억제제 병용 (BRAF V600)","","M||p.5","기존 정리에서 직접 확인하지 못했던 항목. NCCN 수록은 확인됨.")]},
-  {lg:"2L",label:"2차 (PD-1 이후)",items:[R("라이필류셀 (TIL)","C-144-01 ORR 36%, 항LAG-3 이후 38.5%(n=13)","M||p.59","2차 이후 옵션으로 수록. 기존 정리의 ‘승인 상태 미확인’은 NCCN 수록으로 일부 해소."),
+   R("항PD-1 단독 / 니볼루맙 + 이필리무맙 / 니볼루맙 + 렐라틀리맙","RELATIVITY-047: PFS 10.1 vs 4.6개월(HR 0.75); 3년 갱신 OS 51.0 vs 34.1개월(HR 0.80, 기술적)","L|1|Preferred|p.58","렐라틀리맙 조합 수록 확인. 1L 등급은 미추출."),
+   R("BRAF + MEK 억제제 병용 (BRAF V600)","","L|1 (1차) / 2A (2차 이후)|Other recommended|p.58","기존 정리에서 직접 확인하지 못했던 항목. NCCN 수록은 확인됨.")]},
+  {lg:"2L",label:"2차 (PD-1 이후)",items:[R("라이필류셀 (TIL)","C-144-01 ORR 36%, 항LAG-3 이후 38.5%(n=13)","L|2A|Preferred|p.59","2차 이후 옵션으로 수록. 기존 정리의 ‘승인 상태 미확인’은 NCCN 수록으로 일부 해소."),
    R("Vusolimogene oderparepvec (RP1) + Nivolumab (항PD-1 치료 후)","종양용해 바이러스. 단일군 IGNYTE 항PD-1 실패 코호트(n=140) 확정 ORR 32.9%, CR 15.0%, 중앙 DOR 33.7개월. J Clin Oncol 2025 (PMID 40627813). FDA 가속승인 2026-08-06(ORR·DOR 근거), 확증 3상 IGNYTE-3 진행 중","N||","FDA 승인 후 추가한 항목. NCCN 원문과는 아직 대조하지 않음. 두 차례 CRL(2025-07, 2026-04) 후 재제출로 승인됨.")]}]}],
  extra:[],
  pipe:[
@@ -1464,9 +1464,9 @@ const SOLID = [
 {id:"cns",g:"solid",name:"뇌종양",en:"CNS tumors (glioma)",nccn:{f:"cns.pdf",v:"v3.2026",d:"2026-08-17"},
  sections:[{name:"신경교종",lines:[
   {lg:"2L",label:"재발 IDH 변이 grade 3 성상세포종",items:[R("에플로르니틴 + 로무스틴","STELLAR: 전체 OS 차이 없음(HR 0.94). IDH 변이 grade 3 하위군(n=196) OS 34.9 vs 23.5개월(HR 0.64), PFS 15.8 vs 7.2개월(HR 0.57)","U||","NCCN CNS v3.2026에서 검색 결과 없음.")]},
-  {lg:"1L",label:"신규 GBM",items:[R("수술 → 방사선 + 테모졸로마이드 (Stupp) → 보조 TMZ ± TTFields","EF-14 (n=695): mOS 20.9개월","M||p.20","TMZ + 교류전기장 병용이 수록됨.")]},
-  {lg:"2L",label:"재발 GBM",items:[R("확립된 단일 표준 없음 (베바시주맙·로무스틴 등)","EORTC 26101: lomustine+bevacizumab vs lomustine OS 9.1 vs 8.6개월(HR 0.95, 비유의), PFS 4.2 vs 1.5개월","M||p.9","베바시주맙 수록 확인.","e")]},
-  {lg:"1L",label:"IDH 변이 grade 2",items:[R("보라시데닙 (INDIGO, NCT04164901)","진행/사망 위험 61% 감소(HR 0.39), 첫 표적치료제","M||p.14","NEJM 2023;389:589 인용. 등급 미추출.")]},
+  {lg:"1L",label:"신규 GBM",items:[R("수술 → 방사선 + 테모졸로마이드 (Stupp) → 보조 TMZ ± TTFields","EF-14 (n=695): mOS 20.9개월","L|1|Preferred|p.24","TMZ + 교류전기장 병용이 수록됨.")]},
+  {lg:"2L",label:"재발 GBM",items:[R("확립된 단일 표준 없음 (베바시주맙·로무스틴 등)","EORTC 26101: lomustine+bevacizumab vs lomustine OS 9.1 vs 8.6개월(HR 0.95, 비유의), PFS 4.2 vs 1.5개월","L|2A|Preferred|p.33","베바시주맙 수록 확인.","e")]},
+  {lg:"1L",label:"IDH 변이 grade 2",items:[R("보라시데닙 (INDIGO, NCT04164901)","진행/사망 위험 61% 감소(HR 0.39), 첫 표적치료제","L|1|Preferred|p.29, 31","NEJM 2023;389:589 인용. 등급 미추출.")]},
   {lg:"2L",label:"재발 H3 K27M 변이 미만성 정중선 신경교종",items:[R("Dordaviprone (ONC201)","재발 H3 K27M 변이 DMG 통합 분석(n=50) ORR 20.0% (RANO-HGG), 중앙 DOR 11.2개월. J Clin Oncol 2024 (PMID 38335473). FDA 가속승인 2025-08-06(1세 이상), 확증 3상 ACTION 진행 중","N||","FDA 승인 후 추가한 항목. NCCN 원문과는 아직 대조하지 않음.")]}]}],
  extra:[],
  pipe:[
@@ -1480,10 +1480,10 @@ const SOLID = [
  {name:"RAI 불응 분화암 (DTC)",lines:[
   {lg:"1L",label:"1차",items:[
    R("렌바티닙 (SELECT) / 소라페닙","","L|1||p.62",""),
-   R("다브라페닙 + 트라메티닙 (BRAF V600E) / 셀퍼카티닙 (RET 융합)","BRAF: 무작위 2상(n=53) dabrafenib+trametinib ORR 30% vs dabrafenib 35%(RECIST), 우월성 없음. RET 융합: selpercatinib ORR 79%(LIBRETTO-001)","M||p.62","","2")]},
+   R("다브라페닙 + 트라메티닙 (BRAF V600E) / 셀퍼카티닙 (RET 융합)","BRAF: 무작위 2상(n=53) dabrafenib+trametinib ORR 30% vs dabrafenib 35%(RECIST), 우월성 없음. RET 융합: selpercatinib ORR 79%(LIBRETTO-001)","D|2A|Preferred (셀퍼카티닙) / UCC (다브라페닙+트라메티닙)|p.62","NCCN 대조: NCCN에서 셀퍼카티닙(RET 융합)은 Preferred이나 다브라페닙+트라메티닙은 이전 치료 후 진행 시 대안이 없을 때만 UCC로 권고(고위험·VEGF 억제제 부적합 시 1차 가능, 각주 f)되어 두 요법의 권고 수준이 다르다.","2")]},
   {lg:"2L",label:"2차",items:[R("카보잔티닙 (COSMIC-311)","렌바티닙/소라페닙 진행 후","L|1||p.62","유두암 Category 1.")]}]},
- {name:"수질암 (MTC)",lines:[{lg:"1L",label:"RET 변이 1차",items:[R("셀퍼카티닙 (LIBRETTO-531)","카보잔티닙/반데타닙 대비 우위, 정규 승인","M||p.62–63","수록 확인. 등급 미추출.")]}]},
- {name:"역형성암 (ATC)",lines:[{lg:"1L",label:"BRAF V600E",items:[R("다브라페닙 + 트라메티닙","비무작위 2상: BRAF V600E 코호트 vemurafenib+cobimetinib+atezolizumab mOS 43개월(역사적 대조 비교, 무작위 근거 없음)","M||p.62, 64","")]}]}],
+ {name:"수질암 (MTC)",lines:[{lg:"1L",label:"RET 변이 1차",items:[R("셀퍼카티닙 (LIBRETTO-531)","카보잔티닙/반데타닙 대비 우위, 정규 승인","L|1|Preferred|p.63","수록 확인. 등급 미추출.")]}]},
+ {name:"역형성암 (ATC)",lines:[{lg:"1L",label:"BRAF V600E",items:[R("다브라페닙 + 트라메티닙","비무작위 2상: BRAF V600E 코호트 vemurafenib+cobimetinib+atezolizumab mOS 43개월(역사적 대조 비교, 무작위 근거 없음)","L|2A|Preferred|p.64","")]}]}],
  extra:[],
  pipe:[P("신규 3상","이번 검색에서 확인하지 못함. AIC100(CAR-T)은 1상, RMAT 지정","e",[],"차수 미확정 — 이번 검색에서 확인하지 못한 항목")],
  srcs:[]},
@@ -1492,22 +1492,22 @@ const SOLID = [
  sections:[{name:"전이성",lines:[
   {lg:"1L",label:"1차",items:[
    R("젬시타빈 + 시스플라틴 + 더발루맙 (TOPAZ-1)","","L|1|Preferred|p.37",""),
-   R("젬시타빈 + 시스플라틴 + 펨브롤리주맙 (KEYNOTE-966)","","M||p.37","")]},
+   R("젬시타빈 + 시스플라틴 + 펨브롤리주맙 (KEYNOTE-966)","","L|1|Preferred|p.37","")]},
   {lg:"2L",label:"2차",items:[
-   R("FOLFOX (비선택)","면역병용 이후 효과 제한적이라는 전문가 평가","M||p.37",""),
-   R("FGFR2 융합: 페미가티닙 / 푸티바티닙","futibatinib 2022-09-30 FDA 가속승인(간내담관암, FGFR2 융합/재배열). lirafugratinib 2026-09-23 FDA 승인","M||p.4, 38","NCCN 각주: 푸티바티닙·리라푸가티닙·페미가티닙이 얼다피티닙보다 선호."),
-   R("IDH1 변이: 이보시데닙 (ClarIDHy)","PFS 개선, OS 비유의","M||p.38",""),
-   R("HER2 IHC 3+: 자니다타맙 (HERIZON-BTC-01)","2024-11 FDA 가속승인","M||p.38","T-DXd(IHC3+)도 함께 수록.")]}]}],
- extra:[R("T-DXd (HER2 IHC3+)","NCCN 추가 수록","M||p.38","")],
+   R("FOLFOX (비선택)","면역병용 이후 효과 제한적이라는 전문가 평가","L|2A|Preferred|p.37",""),
+   R("FGFR2 융합: 페미가티닙 / 푸티바티닙","futibatinib 2022-09-30 FDA 가속승인(간내담관암, FGFR2 융합/재배열). lirafugratinib 2026-09-23 FDA 승인","L|2A|UCC|p.38","NCCN 각주: 푸티바티닙·리라푸가티닙·페미가티닙이 얼다피티닙보다 선호."),
+   R("IDH1 변이: 이보시데닙 (ClarIDHy)","PFS 개선, OS 비유의","L|1|UCC|p.38",""),
+   R("HER2 IHC 3+: 자니다타맙 (HERIZON-BTC-01)","2024-11 FDA 가속승인","L|2A|UCC|p.38","T-DXd(IHC3+)도 함께 수록.")]}]}],
+ extra:[R("T-DXd (HER2 IHC3+)","NCCN 추가 수록","L|2A|UCC|p.38","")],
  pipe:[P("HERIZON-BTC-302 (NCT06282575)","자니다타맙 + 젬시스 (± 더발루맙/펨브롤리주맙) vs 표준요법, 1L HER2+","v",["1L"],"항목 기재 기준 — 1L HER2+로 기재")],
  srcs:[["HERIZON-BTC-302 (NCT06282575)","https://clinicaltrials.gov/study/NCT06282575"]]},
 
 {id:"sarcoma",g:"solid",name:"연부조직육종",en:"Soft tissue sarcoma",nccn:{f:"sarcoma.pdf",v:"v5.2026",d:"2026-07-23"},
  sections:[{name:"연부조직육종",lines:[
   {lg:"1L",label:"1차",items:[
-   R("독소루비신 단독","EORTC 62012 (PMID 24618336): 독소+이포스파미드 병용은 OS 이득 없음","M||p.59",""),
-   R("독소루비신 + 트라벡테딘 → 트라벡테딘 유지 (평활근육종, LMS-04)","ORR 자궁 36% vs 15%, 연부조직 37% vs 12%","M||p.59","LMS 한정 옵션으로 수록."),
-   R("독소루비신 + 이포스파미드 vs 젬시타빈 + 도세탁셀 (비자궁 LMS)","터키 후향 연구(n=150): 중앙 OS 22.0 vs 19.1개월 (p=0.18), PFS 7.3 vs 6.1개월, ORR 25.3% vs 29.6%로 유의한 차이 없음. Int J Cancer 2025;158:1703 (PMID 41147691)","M||p.59","")]},
+   R("독소루비신 단독","EORTC 62012 (PMID 24618336): 독소+이포스파미드 병용은 OS 이득 없음","L|2A|Preferred|p.59",""),
+   R("독소루비신 + 트라벡테딘 → 트라벡테딘 유지 (평활근육종, LMS-04)","ORR 자궁 36% vs 15%, 연부조직 37% vs 12%","L|2A|Preferred|p.59","LMS 한정 옵션으로 수록."),
+   R("독소루비신 + 이포스파미드 vs 젬시타빈 + 도세탁셀 (비자궁 LMS)","터키 후향 연구(n=150): 중앙 OS 22.0 vs 19.1개월 (p=0.18), PFS 7.3 vs 6.1개월, ORR 25.3% vs 29.6%로 유의한 차이 없음. Int J Cancer 2025;158:1703 (PMID 41147691)","D|2A (AIM) / 2B (도세탁셀+젬시타빈 1차)|Preferred (AIM) / Other recommended (도세탁셀+젬시타빈)|p.59","NCCN 대조: NCCN 1차에서 AIM은 Preferred 2A인 반면 도세탁셀+젬시타빈은 Other recommended category 2B(2차 이후에는 Preferred 2A)여서 두 요법을 동등하게 보는 DB 설명과 등급이 다르다.")]},
   {lg:"2L",label:"활막육종 (MAGE-A4+, HLA-A*02)",items:[R("Afamitresgene autoleucel (MAGE-A4 TCR-T, SPEARHEAD-1)","HLA-A*02 양성·MAGE-A4 발현 기치료 활막육종. 코호트 1 활막육종 ORR 39%(n=44), 코호트 1~3 통합(n=137) ORR 43.8%, 중앙 DOR 5.3개월. Lancet 2024 (PMID 38554725). FDA 가속승인 2024-08, 정식 승인 2026-06-22(12세 이상)","N||","FDA 승인 후 추가한 항목. NCCN 원문과는 아직 대조하지 않음. 정식 승인 수치(코호트 1~3 통합)는 회사 보도자료 기준.")]}]},
  {name:"골육종 (골종양)",lines:[
   {lg:"adj",label:"신보조·보조",items:[R("MAP (골육종)","신보조·보조 MAP(시스플라틴 + 독소루비신 + 고용량 메토트렉세이트) 표준. EURAMOS-1에서 MAPIE 추가 이득 없음","N||","","e")]}]}],
@@ -1518,9 +1518,9 @@ const SOLID = [
 {id:"gist",g:"solid",name:"위장관기질종양 (GIST)",en:"Gastrointestinal stromal tumor",scope:"위장관 간엽종양으로 위·식도 선암과 별도의 NCCN GIST 지침(v1.2026)을 적용합니다. 발생 부위는 위 약 60%, 소장 약 30%, 식도 1% 미만입니다(NCCN GIST 판 토론부).",nccn:{f:"gist.pdf",v:"v1.2026",d:"2026-01-13"},
  sections:[{name:"전이성 GIST",lines:[
   {lg:"2L",label:"2차",items:[
-   R("수니티닙","현재 표준","M||p.4",""),
+   R("수니티닙","현재 표준","L|1|Preferred|p.19",""),
    R("bezuclastinib + 수니티닙 (PEAK 3상)","mPFS 16.5 vs 9.2개월, HR 0.50 (95% CI 0.39–0.65). PDUFA 2026-11-30","U||","승인 선행. NCCN GIST v1.2026(2026-01-13)에서 검색 결과 없음.")]},
-  {lg:"3L+",label:"4차 이후",items:[R("리프레티닙","≥3개 TKI(이매티닙 포함) 치료 후","M||p.14","")]}]}],
+  {lg:"3L+",label:"4차 이후",items:[R("리프레티닙","≥3개 TKI(이매티닙 포함) 치료 후","L|1|Preferred|p.19","")]}]}],
  extra:[],
  pipe:[P("bezuclastinib exon 9 1L 병용","2상, 2026 중반 개시 예정","e",["1L"],"항목 기재 기준 — exon 9 1L 병용으로 기재")],
  srcs:[["Cogent PEAK 결과 및 PDUFA (Barchart)","https://www.barchart.com/story/news/3754111/cogent-biosciences-reports-recent-business-highlights-and-second-quarter-2026-financial-results"]]},
@@ -1745,8 +1745,8 @@ const HEME = [
    R("아자시티딘 + 이보시데닙 (IDH1)","","L|1|Preferred|p.36","")]},
   {lg:"2L",label:"R/R",items:[
    R("길테리티닙 (FLT3 변이, ADMIRAL)","","L|1||p.43",""),
-   R("지프토메닙 (NPM1) / 레부메닙 (KMT2A 재배열 또는 NPM1)","메닌 억제제. 단독 CR/CRh 약 20~23%, ven/aza 병용 시 반응률 40~60%대","M||p.5","NCCN과 FDA 모두 R/R 한정. 1L 등재 아님."),
-   R("이보시데닙 · 에나시데닙 (IDH1/2)","이번 검색에서는 약물명만 확인","M||","이보시데닙 수록 확인.","e")]}]}],
+   R("지프토메닙 (NPM1) / 레부메닙 (KMT2A 재배열 또는 NPM1)","메닌 억제제. 단독 CR/CRh 약 20~23%, ven/aza 병용 시 반응률 40~60%대","L|2A||p.43","NCCN과 FDA 모두 R/R 한정. 1L 등재 아님."),
+   R("이보시데닙 · 에나시데닙 (IDH1/2)","이번 검색에서는 약물명만 확인","L|2A||p.43","이보시데닙 수록 확인.","e")]}]}],
  extra:[R("7+3 이후 길테리티닙 유지 (FLT3-ITD, 동종이식 후)","NCCN 추가 수록","L||Preferred|p.41","")],
  pipe:[
   P("블렉시메닙 (bleximenib) + ven/aza","cAMeLot-2, 600명, 2025.6 개시","v",["1L"],"등록 정보 확인 — cAMeLot-2(NCT06852222): 신규 진단 AML"),
@@ -1763,11 +1763,11 @@ const HEME = [
   {lg:"1L",label:"1차",items:[R("소아 유래(pediatric-inspired) 집중 화학요법","Ph− B-ALL 공고에 blinatumomab 추가: MRD 양성(BLAST)뿐 아니라 MRD 음성(E1910, 3년 OS 85% vs 68%)에서도 근거. FDA 2024-06 공고 승인(MRD 무관)","L||Preferred|p.6","MRD+ 공고에서 블리나투모맙 Preferred.")]}]},
  {name:"Ph+",lines:[
   {lg:"1L",label:"1차",items:[
-   R("TKI(포나티닙) + 화학요법","PhALLCON: 포나티닙이 이매티닙 대비 우위. FDA 승인 2024-03-19","M||p.31, 91","NCCN은 TKI 옵션(아시미닙, 보수티닙, 다사티닙, 이매티닙, 닐로티닙, 포나티닙)을 묶어 수록하고 PhALLCON을 인용(p.31). 포나티닙 개별 Category는 구분하지 않음. FDA 승인일 인용(p.91)."),
-   R("포나티닙 + 블리나투모맙 (화학요법 없음)","MD Anderson 단일군 2상(n=60, 신규 진단 40명): 신규 진단 Ph+ ALL 완전분자반응 87%(33/38). 무작위 근거 없음","M||p.90","본문 논의 수록. 알고리즘상 블리나투모맙 + TKI 조합은 공고 단계에서 Preferred(p.5)."),
+   R("TKI(포나티닙) + 화학요법","PhALLCON: 포나티닙이 이매티닙 대비 우위. FDA 승인 2024-03-19","L|2A|Other recommended|p.35","NCCN은 TKI 옵션(아시미닙, 보수티닙, 다사티닙, 이매티닙, 닐로티닙, 포나티닙)을 묶어 수록하고 PhALLCON을 인용(p.31). 포나티닙 개별 Category는 구분하지 않음. FDA 승인일 인용(p.91)."),
+   R("포나티닙 + 블리나투모맙 (화학요법 없음)","MD Anderson 단일군 2상(n=60, 신규 진단 40명): 신규 진단 Ph+ ALL 완전분자반응 87%(33/38). 무작위 근거 없음","L|2A|Other recommended|p.35","본문 논의 수록. 알고리즘상 블리나투모맙 + TKI 조합은 공고 단계에서 Preferred(p.5)."),
    R("블리나투모맙 + TKI (공고, MRD+)","","L||Preferred|p.5","")]}]},
  {name:"R/R B-ALL",lines:[
-  {lg:"2L",label:"재발·불응",items:[R("블리나투모맙 · 이노투주맙 오조가마이신","","M||p.4",""),
+  {lg:"2L",label:"재발·불응",items:[R("블리나투모맙 · 이노투주맙 오조가마이신","","L|1 (Ph−) / 2A (Ph+)|Preferred (Ph−) / Other recommended (Ph+)|p.61",""),
    R("Obecabtagene autoleucel (obe-cel, FELIX)","성인 재발·불응 B-ALL. 코호트 2A(n=94) CR/CRi 77%, 주입 127명 EFS 중앙값 11.9개월, OS 15.6개월, 3등급 이상 CRS 2.4%. N Engl J Med 2024 (PMID 39602653). FDA 승인 2024-11, EU 조건부 2025-07","N||","FDA 승인 후 추가한 항목. NCCN 원문과는 아직 대조하지 않음.")]}]}],
  extra:[R("아시미닙 ± 다른 TKI (Ph+ 1L, 불내성 환자)","NCCN 추가 수록","L|2B|UCC|p.4, 31","")],
  pipe:[
@@ -1781,7 +1781,7 @@ const HEME = [
    R("이매티닙 (저위험)","","L|1|Preferred|p.8",""),
    R("2세대 TKI (보수티닙·다사티닙·닐로티닙)","","L|1|Preferred|p.8–9","중·고위험군에서 asciminib과 함께 Preferred."),
    R("아시미닙 (ASC4FIRST, NCT04971226)","48주 MMR 67.7% vs 49.0% (NEJM 2024;391:885, PMID 38820078). 96주 MMR 74.1% vs 52.0%, MR4.5 30.9% vs 17.7% (96주 MMR: Blood 2026;147:1433, PMID 41397287. MR4.5는 원문 확인 필요)","L|1|Preferred|p.8–9","기존 정리의 144주 수치는 확인하지 못해 삭제함. ABL1 exon 2 결손 isoform 환자는 금기(p.4).","2")]},
-  {lg:"adj",label:"치료중단 (TFR)",items:[R("MR4.5 지속 후 TFR 시도","1차 중단 실패 후 포나티닙 공고 뒤 2차 중단 성적이 EHA 2026에서 보고(ReStop)","M||p.10–11","")]},
+  {lg:"adj",label:"치료중단 (TFR)",items:[R("MR4.5 지속 후 TFR 시도","1차 중단 실패 후 포나티닙 공고 뒤 2차 중단 성적이 EHA 2026에서 보고(ReStop)","D|2A||p.29","NCCN 대조: NCCN 중단 기준은 MR4(≤0.01% IS) 2년 이상 유지와 TKI 3년 이상 투여이며 MR4.5는 qPCR 검출 민감도 요건일 뿐이고, 포나티닙 공고 후 2차 중단(ReStop)은 원문에 없음(RE-STIM 2차 중단만 본문 p.56에 언급).")]},
   {lg:"2L",label:"2차 이후",items:[R("2차 이후 요법","이번 검색에서 확인하지 못함","N||","","e")]}]}],
  extra:[],
  pipe:[P("신규 3상","이번 검색에서 확인하지 못함. 다음 과제는 아시미닙 이후 내성 변이 관리","e",[],"차수 미확정 — 이번 검색에서 확인하지 못한 항목")],
@@ -1813,8 +1813,8 @@ const HEME = [
    R("니볼루맙 + AVD (SWOG S1826, NCT03907488)","994명, BV-AVD 대비 PFS HR 0.42. FDA 승인 2026-03-20","L|1|Preferred|p.5, 20","v2.2026에서 Category 1로 상향."),
    R("BV-AVD + G-CSF (ECHELON-1)","ABVD 대비 6년 OS 93.9% vs 89.4% (HR 0.59)","L|1|UCC|p.20","")]},
   {lg:"2L",label:"R/R",items:[
-   R("펨브롤리주맙 (KEYNOTE-204)","BV 대비 PFS 13.2 vs 8.3개월 (HR 0.65)","M||p.6, 42",""),
-   R("니볼루맙","자가이식 실패 후(± BV) R/R cHL; CheckMate 205 단일군 근거, 2L 무작위 근거 없음","M||p.6, 42","")]}]}],
+   R("펨브롤리주맙 (KEYNOTE-204)","BV 대비 PFS 13.2 vs 8.3개월 (HR 0.65)","D|2A||p.42","NCCN 대조: NCCN은 펨브롤리주맙 단독을 2차 칸이 아니라 '3개 이상 치료 후 불응' 칸과 HDT/ASCR 비대상 완화 단독요법으로만 수록하며, 2차 칸에는 GVD·ICE 병용(펨브롤리주맙)만 있음."),
+   R("니볼루맙","자가이식 실패 후(± BV) R/R cHL; CheckMate 205 단일군 근거, 2L 무작위 근거 없음","L|2A||p.42","")]}]}],
  extra:[],
  pipe:[
   P("AHOD2131 (NCT05675410)","조기 병기 BV + 니볼루맙","v",["1L"],"추정, 등록 정보 미확인 — 조기 병기 BV + 니볼루맙으로 기재, 미치료 조기 병기 호지킨림프종 대상 설계로 추정"),
@@ -1830,7 +1830,7 @@ const HEME = [
    R("타시타맙 + 레날리도마이드 + R-CHOP (frontMIND, NCT04824092)","고위험군에서 R-CHOP 대비 PFS 유의 개선(EHA 2026)","U||","승인 선행. 해당 판(2026-05-20)이 EHA 2026 발표보다 앞서므로 시점 요인일 수 있음.")]},
   {lg:"2L",label:"2차",items:[R("CD19 CAR-T (axi-cel, liso-cel)","ZUMA-7에서 OS 유의 개선(HR 0.73), TRANSFORM은 EFS·PFS 개선, OS는 비유의(교차 보정 시 개선). 조기 재발·불응은 CAR-T 직행","L|1||p.78","axi-cel, liso-cel 모두 Category 1 (CAR-T 적격, 12개월 이내 재발·불응). 12개월 이후 재발에도 Preferred(p.79).")]},
   {lg:"3L+",label:"3차 이후 · CAR-T 이후",items:[
-   R("에프코리타맙","2023 FDA 가속승인","M||p.10, 24",""),
+   R("에프코리타맙","2023 FDA 가속승인","L|2A|Preferred|p.80",""),
    R("글로피타맙","","L|2A||p.9","2B에서 2A로 상향, 적응 조건 문구 삭제."),
    R("글로피타맙 + 폴라투주맙","","L|2B|Preferred|p.4","NCCN 추가 수록 (CAR-T 비적격).")]}]}],
  extra:[R("모수네투주맙 + 폴라투주맙","NCCN 추가 수록","L|2A||p.9","")],
@@ -1842,7 +1842,7 @@ const HEME = [
 {id:"flmcl",g:"heme",name:"여포성림프종 · 외투세포림프종",en:"Follicular lymphoma / Mantle cell lymphoma",nccn:{f:"b-cell.pdf",v:"v4.2026",d:"2026-05-20"},
  sections:[
  {name:"여포성림프종 (FL)",lines:[
-  {lg:"3L+",label:"2개 이상 치료 후",items:[R("모수네투주맙 (CD20×CD3)","첫 승인 이중항체","M||p.24","IV/SC 모두 수록.")]},
+  {lg:"3L+",label:"2개 이상 치료 후",items:[R("모수네투주맙 (CD20×CD3)","첫 승인 이중항체","L|2A|Preferred|p.24","IV/SC 모두 수록.")]},
   {lg:"1L",label:"1차",items:[R("화학면역요법","화학요법 없는 레짐으로 이동 시도 중","N||","")]},
   {lg:"2L",label:"R/R",items:[
    
@@ -1852,7 +1852,7 @@ const HEME = [
   {lg:"1L",label:"1차",items:[
    R("공격적: TRIANGLE (이브루티닙 + 화학 ± ASCT)","","L|2A||p.8","TRIANGLE 레짐에서 대체 BTKi(아칼라브루티닙·자누브루티닙)가 2B에서 2A로 상향. 유지요법에 리툭시맙 + 공유결합 BTKi 추가."),
    R("비적합: 아칼라브루티닙 + BR (ECHO) / 아칼라브루티닙 + 리툭시맙 / BR","NCCN 2026.9 업데이트 보도(2차 보도): 2세대 BTKi가 이브루티닙을 대체 가능, MRD·TP53 검사 중심","L||Preferred|p.8","폴더의 v4.2026(2026-05-20)에 이미 반영됨. 아칼라브루티닙 + BR이 Preferred 1순위, 아칼라브루티닙 + 리툭시맙은 Other recommended에서 Preferred로 이동, 이브루티닙 + 리툭시맙은 Other recommended(2A). 보도의 ‘2026.9’는 저널 게재 시점으로 추정되나 확인하지는 못함.","2")]},
-  {lg:"2L",label:"BTKi 진행 후",items:[R("brexu-cel (BTKi 후) · 피르토브루티닙 / liso-cel (BTKi 포함 2개 이상 치료 후)","24개월 내 진행 시","M||p.58","세 가지 모두 2차 이후 요법으로 수록. 등급 미추출.")]}]}],
+  {lg:"2L",label:"BTKi 진행 후",items:[R("brexu-cel (BTKi 후) · 피르토브루티닙 / liso-cel (BTKi 포함 2개 이상 치료 후)","24개월 내 진행 시","L|2A|UCC|p.58","세 가지 모두 2차 이후 요법으로 수록. 등급 미추출.")]}]}],
  extra:[],
  pipe:[
   P("EPCORE FL-2 (NCT06191744)","에프코리타맙 + R2 vs 화학면역요법","v",["1L"],"등록 정보 확인 — EPCORE FL-2(NCT06191744): 미치료 여포성림프종"),
@@ -1902,10 +1902,10 @@ const HEME = [
    R("펠라브레십 + 룩소리티닙 (MANIFEST-2)","JAKi 미투약 MF. SVR35 65.9% vs 35.2%, TSS50 52.3% vs 46.3%(비유의)","U||","NCCN MPN v3.2026에서 검색 결과 없음."),
    R("나브테마들린 + 룩소리티닙 (POIESIS)","룩소리티닙 준최적 반응 JAKi 미투약 MF, 3상 진행 중(NCT06479135), 결과 미발표","U||","NCCN MPN v3.2026에서 검색 결과 없음.")]}]},
  {name:"진성적혈구증가증 (PV)",lines:[
-  {lg:"1L",label:"1차",items:[R("하이드록시우레아","","M||","")]},
+  {lg:"1L",label:"1차",items:[R("하이드록시우레아","","L|2A|Preferred (고위험) / Other recommended (저위험)|p.21","")]},
   {lg:"2L",label:"불내성·저항",items:[
-   R("룩소리티닙 (MAJIC-PV, 2상)","","M||",""),
-   R("로페그인터페론 알파-2b (PV)","PROUD-PV(세포감소치료 무경험 포함). FDA 2021-11 PV 승인(차수 제한 없음). NCCN 2A","M||p.5","ET의 반응 불충분 시에는 Category 1, Preferred로 수록."),
+   R("룩소리티닙 (MAJIC-PV, 2상)","","L|1|Preferred|p.21",""),
+   R("로페그인터페론 알파-2b (PV)","PROUD-PV(세포감소치료 무경험 포함). FDA 2021-11 PV 승인(차수 제한 없음). NCCN 2A","L|2A|Other recommended|p.21","ET의 반응 불충분 시에는 Category 1, Preferred로 수록."),
    R("러스퍼티드 (VERIFY, NCT05210790)","정정: REVIVE 2상 결과는 반응률 60% vs 17%(p=0.002, n=59). 69.2%/18.5%는 중간분석 수치","L|1||p.4","NCCN은 각주로 Category 1 수록. FDA 2026-08-28 승인(VERIFY).")]}]},
  {name:"본태성혈소판증가증 (ET)",lines:[{lg:"2L",label:"반응 불충분",items:[R("로페그인터페론 알파-2b (ET)","SURPASS ET","L|1|Preferred|p.5","기존 정리에서는 ‘확인하지 못함’으로 남긴 영역.")]}]}],
  extra:[],
@@ -2055,7 +2055,7 @@ function nccnCell(n,c,q){
 function stTag(n){var m=ST[n.s]||ST.N,g=[];
   var codes=[];String(n.c||"").replace(/(?:^|[^0-9A-Za-z])(1|2A|2B|3)(?![0-9A-Za-z])/g,function(_,c){if(codes.indexOf(c)<0)codes.push(c)});
   if(codes.length)g.push("Cat. "+codes.join("/"));else if(n.c&&n.c.length<=6)g.push(n.c);
-  var p=String(n.p||"");if(/preferred/i.test(p)&&!/other/i.test(p))g.push("Preferred");else if(/useful/i.test(p))g.push("Useful");
+  var p=String(n.p||"");if(/preferred/i.test(p)&&!/other/i.test(p))g.push("Preferred");else if(/useful|\bUCC\b/i.test(p))g.push("Useful");
   var full=[n.c?((/^\d/.test(n.c)?"Category ":"")+n.c):"",T(n.p||"")].filter(Boolean).join(" · ");
   return '<span class="badge s-'+n.s+' rtag" title="'+esc(m[1]+(full?" — "+full:""))+'">'+m[0]+(g.length?'<span class="rg">'+esc(g.join(" · "))+'</span>':'')+'</span>'}
 var TRN=null;
@@ -2427,6 +2427,42 @@ var UXI={ko:{bNew:"NEW",bChg:"변경",bUpd:"업데이트",colAll:"모두 접기"
 function ux(k){return UXI[state.lang==="en"?"en":"ko"][k]}
 /* 최근 변경 기록: DB를 고친 날짜(d), 대상 요법 제목 접두(p), 종류(k: add/mod) */
 var CHG=[
+ {d:"2026-10-28",cid:"colon",p:"백금 기반 전환 ± 베바시주맙 / 지브-애플리버셉트",k:"mod",ko:"NCCN 원문 대조에서 차이 확인: NCCN에서 지브-애플리버셉트(및 라무시루맙)는 옥살리플라틴 치료 후 FOLFIRI/이리노테칸과만 병용되고, 백금 기반(FOLFOX/CAPEOX) 전환은 이리노테칸 치료 후 ± 베바시주맙으로만 수록돼 조합이 다름.",en:"NCCN cross-check found a discrepancy; see the note"},
+ {d:"2026-10-28",cid:"colon",p:"FOLFOX / FOLFIRI / FOLFOXIRI + 베바시주맙",k:"mod",ko:"NCCN 원문 대조에서 차이 확인: NCCN은 FOLFOXIRI 대신 FOLFIRINOX(± 베바시주맙)를 수록하며 고용량 5-FU 때문에 FOLFOXIRI는 권고하지 않음(p.53 각주 s).",en:"NCCN cross-check found a discrepancy; see the note"},
+ {d:"2026-10-28",cid:"colon",p:"T-DXd (HER2+)",k:"mod",ko:"NCCN 원문 대조에서 차이 확인: NCCN은 HER2 IHC 3+ 과발현에 한정해 옥살리플라틴·이리노테칸 이후 또는 3차 이상(및 종양불문 요법)으로만 수록하므로 'HER2+' 전체보다 대상이 좁음.",en:"NCCN cross-check found a discrepancy; see the note"},
+ {d:"2026-10-28",cid:"prostate",p:"ARPI 교체 · 도세탁셀 · 카바지탁셀",k:"mod",ko:"NCCN 원문 대조에서 차이 확인: ARPI 교체는 PROS-18의 ARPI 후 칸 어디에도 없고(아비라테론·엔잘루타마이드는 Pre-ARPI 칸에만) 도세탁셀(ARPI 후, cat 1)과 카바지탁셀(도세탁셀 후, cat 1)만 Preferred로 수록됨.",en:"NCCN cross-check found a discrepancy; see the note"},
+ {d:"2026-10-28",cid:"kidney",p:"니볼루맙 + 이필리무맙 (IMDC 중간·고위험)",k:"mod",ko:"NCCN 원문 대조에서 차이 확인: NCCN v2.2027 ccRCC 1차에서 Ipilimumab+Nivolumab은 category 1 Preferred(위험군 구분 없이 수록)이며, DB의 'Other recommended·2B UCC에서 상향'은 비투명세포 표(KID-D 3 of 3, p.24) 변경 사항임.",en:"NCCN cross-check found a discrepancy; see the note"},
+ {d:"2026-10-28",cid:"bladder",p:"PD-(L)1 억제제 (IO 미투약 시) · 화학요법",k:"mod",ko:"NCCN 원문 대조에서 차이 확인: EV+P 이후(BL-G 4 of 8 'IO+EV 투여·화학요법 미투여' 칸)에는 백금 화학요법이 Preferred이고 PD-(L)1 억제제는 없으며, 펨브롤리주맙은 '화학요법 후 IO·EV 미투여' 칸에서만 Other recommended(post-platinum category 1)로 수록됨.",en:"NCCN cross-check found a discrepancy; see the note"},
+ {d:"2026-10-28",cid:"gastric",p:"자니다타맙 + 화학요법 ± 티슬렐리주맙 (HER2+ 1L)",k:"mod",ko:"NCCN 원문 대조에서 차이 확인: 2B는 티슬렐리주맙 없는 시스플라틴+자니다타맙 3제에만 해당하며, 시스플라틴+자니다타맙+티슬렐리주맙 4제는 2A임.",en:"NCCN cross-check found a discrepancy; see the note"},
+ {d:"2026-10-28",cid:"hcc",p:"남은 TKI 순차 사용, 펨브롤리주맙 (HBV 관련, PD-(L)1 미투여 후) / 니볼루맙 + 이필리무맙 (소라페닙 후)",k:"mod",ko:"NCCN 원문 대조에서 차이 확인: NCCN은 후속치료를 '1차 Preferred/Other Recommended 권고 고려' 칸으로만 두며, 펨브롤리주맙을 HBV 관련으로 한정하지 않고 이필리무맙+니볼루맙도 소라페닙 후가 아니라 1차 Preferred(category 1, 후속 사용은 CTLA-4 미투여 시)로 수록함.",en:"NCCN cross-check found a discrepancy; see the note"},
+ {d:"2026-10-28",cid:"thyroid",p:"다브라페닙 + 트라메티닙 (BRAF V600E) / 셀퍼카티닙 (RET 융합)",k:"mod",ko:"NCCN 원문 대조에서 차이 확인: NCCN에서 셀퍼카티닙(RET 융합)은 Preferred이나 다브라페닙+트라메티닙은 이전 치료 후 진행 시 대안이 없을 때만 UCC로 권고(고위험·VEGF 억제제 부적합 시 1차 가능, 각주 f)되어 두 요법의 권고 수준이 다르다.",en:"NCCN cross-check found a discrepancy; see the note"},
+ {d:"2026-10-28",cid:"sarcoma",p:"독소루비신 + 이포스파미드 vs 젬시타빈 + 도세탁셀 (비자궁 LMS)",k:"mod",ko:"NCCN 원문 대조에서 차이 확인: NCCN 1차에서 AIM은 Preferred 2A인 반면 도세탁셀+젬시타빈은 Other recommended category 2B(2차 이후에는 Preferred 2A)여서 두 요법을 동등하게 보는 DB 설명과 등급이 다르다.",en:"NCCN cross-check found a discrepancy; see the note"},
+ {d:"2026-10-28",cid:"cml",p:"MR4.5 지속 후 TFR 시도",k:"mod",ko:"NCCN 원문 대조에서 차이 확인: NCCN 중단 기준은 MR4(≤0.01% IS) 2년 이상 유지와 TKI 3년 이상 투여이며 MR4.5는 qPCR 검출 민감도 요건일 뿐이고, 포나티닙 공고 후 2차 중단(ReStop)은 원문에 없음(RE-STIM 2차 중단만 본문 p.56에 언급).",en:"NCCN cross-check found a discrepancy; see the note"},
+ {d:"2026-10-28",cid:"hl",p:"펨브롤리주맙 (KEYNOTE-204)",k:"mod",ko:"NCCN 원문 대조에서 차이 확인: NCCN은 펨브롤리주맙 단독을 2차 칸이 아니라 '3개 이상 치료 후 불응' 칸과 HDT/ASCR 비대상 완화 단독요법으로만 수록하며, 2차 칸에는 GVD·ICE 병용(펨브롤리주맙)만 있음.",en:"NCCN cross-check found a discrepancy; see the note"},
+ {d:"2026-10-28",cid:"colon",p:"",k:"mod",ko:"NCCN 원문에서 등급·선호 구분 확인: 13건(등재 10, 차이 3)",en:"Category and preference confirmed against the NCCN source for 13 items (10 listed, 3 discrepancies)"},
+ {d:"2026-10-28",cid:"breast",p:"",k:"mod",ko:"NCCN 원문에서 등급·선호 구분 확인: 6건(등재 6)",en:"Category and preference confirmed against the NCCN source for 6 items (6 listed)"},
+ {d:"2026-10-28",cid:"ovarian",p:"",k:"mod",ko:"NCCN 원문에서 등급·선호 구분 확인: 6건(등재 6)",en:"Category and preference confirmed against the NCCN source for 6 items (6 listed)"},
+ {d:"2026-10-28",cid:"prostate",p:"",k:"mod",ko:"NCCN 원문에서 등급·선호 구분 확인: 4건(등재 3, 차이 1)",en:"Category and preference confirmed against the NCCN source for 4 items (3 listed, 1 discrepancies)"},
+ {d:"2026-10-28",cid:"kidney",p:"",k:"mod",ko:"NCCN 원문에서 등급·선호 구분 확인: 4건(등재 3, 차이 1)",en:"Category and preference confirmed against the NCCN source for 4 items (3 listed, 1 discrepancies)"},
+ {d:"2026-10-28",cid:"bladder",p:"",k:"mod",ko:"NCCN 원문에서 등급·선호 구분 확인: 1건(등재 0, 차이 1)",en:"Category and preference confirmed against the NCCN source for 1 items (0 listed, 1 discrepancies)"},
+ {d:"2026-10-28",cid:"gastric",p:"",k:"mod",ko:"NCCN 원문에서 등급·선호 구분 확인: 1건(등재 0, 차이 1)",en:"Category and preference confirmed against the NCCN source for 1 items (0 listed, 1 discrepancies)"},
+ {d:"2026-10-28",cid:"esophageal",p:"",k:"mod",ko:"NCCN 원문에서 등급·선호 구분 확인: 2건(등재 2)",en:"Category and preference confirmed against the NCCN source for 2 items (2 listed)"},
+ {d:"2026-10-28",cid:"hcc",p:"",k:"mod",ko:"NCCN 원문에서 등급·선호 구분 확인: 2건(등재 1, 차이 1)",en:"Category and preference confirmed against the NCCN source for 2 items (1 listed, 1 discrepancies)"},
+ {d:"2026-10-28",cid:"pancreatic",p:"",k:"mod",ko:"NCCN 원문에서 등급·선호 구분 확인: 3건(등재 3)",en:"Category and preference confirmed against the NCCN source for 3 items (3 listed)"},
+ {d:"2026-10-28",cid:"btc",p:"",k:"mod",ko:"NCCN 원문에서 등급·선호 구분 확인: 6건(등재 6)",en:"Category and preference confirmed against the NCCN source for 6 items (6 listed)"},
+ {d:"2026-10-28",cid:"gist",p:"",k:"mod",ko:"NCCN 원문에서 등급·선호 구분 확인: 2건(등재 2)",en:"Category and preference confirmed against the NCCN source for 2 items (2 listed)"},
+ {d:"2026-10-28",cid:"hn",p:"",k:"mod",ko:"NCCN 원문에서 등급·선호 구분 확인: 2건(등재 2)",en:"Category and preference confirmed against the NCCN source for 2 items (2 listed)"},
+ {d:"2026-10-28",cid:"melanoma",p:"",k:"mod",ko:"NCCN 원문에서 등급·선호 구분 확인: 3건(등재 3)",en:"Category and preference confirmed against the NCCN source for 3 items (3 listed)"},
+ {d:"2026-10-28",cid:"cns",p:"",k:"mod",ko:"NCCN 원문에서 등급·선호 구분 확인: 3건(등재 3)",en:"Category and preference confirmed against the NCCN source for 3 items (3 listed)"},
+ {d:"2026-10-28",cid:"thyroid",p:"",k:"mod",ko:"NCCN 원문에서 등급·선호 구분 확인: 3건(등재 2, 차이 1)",en:"Category and preference confirmed against the NCCN source for 3 items (2 listed, 1 discrepancies)"},
+ {d:"2026-10-28",cid:"sarcoma",p:"",k:"mod",ko:"NCCN 원문에서 등급·선호 구분 확인: 3건(등재 2, 차이 1)",en:"Category and preference confirmed against the NCCN source for 3 items (2 listed, 1 discrepancies)"},
+ {d:"2026-10-28",cid:"aml",p:"",k:"mod",ko:"NCCN 원문에서 등급·선호 구분 확인: 2건(등재 2)",en:"Category and preference confirmed against the NCCN source for 2 items (2 listed)"},
+ {d:"2026-10-28",cid:"all",p:"",k:"mod",ko:"NCCN 원문에서 등급·선호 구분 확인: 3건(등재 3)",en:"Category and preference confirmed against the NCCN source for 3 items (3 listed)"},
+ {d:"2026-10-28",cid:"cml",p:"",k:"mod",ko:"NCCN 원문에서 등급·선호 구분 확인: 1건(등재 0, 차이 1)",en:"Category and preference confirmed against the NCCN source for 1 items (0 listed, 1 discrepancies)"},
+ {d:"2026-10-28",cid:"hl",p:"",k:"mod",ko:"NCCN 원문에서 등급·선호 구분 확인: 2건(등재 1, 차이 1)",en:"Category and preference confirmed against the NCCN source for 2 items (1 listed, 1 discrepancies)"},
+ {d:"2026-10-28",cid:"dlbcl",p:"",k:"mod",ko:"NCCN 원문에서 등급·선호 구분 확인: 1건(등재 1)",en:"Category and preference confirmed against the NCCN source for 1 items (1 listed)"},
+ {d:"2026-10-28",cid:"flmcl",p:"",k:"mod",ko:"NCCN 원문에서 등급·선호 구분 확인: 2건(등재 2)",en:"Category and preference confirmed against the NCCN source for 2 items (2 listed)"},
+ {d:"2026-10-28",cid:"mpn",p:"",k:"mod",ko:"NCCN 원문에서 등급·선호 구분 확인: 3건(등재 3)",en:"Category and preference confirmed against the NCCN source for 3 items (3 listed)"},
  {d:"2026-10-28",cid:"*",p:"",k:"add",ko:"칩 설명 추가: 상태·등급·차수·임상 단계 등 칩을 누르면 뜻을 쉬운 말로 표시",en:"Chip explanations: tap any status, category, line or trial-stage chip to see what it means"},
  {d:"2026-10-27",cid:"*",p:"",k:"add",ko:"전체 임상 결과 타임라인 추가: 암종 선택 목록 맨 위에서 모든 암종의 결과·보도·허가를 발표일순으로 확인",en:"New all-trial results timeline at the top of the cancer list: results, news and regulatory events across cancers by date"},
  {d:"2026-10-18",cid:"colon",p:"소토라십(또는 아다그라십)",k:"mod",ko:"Adagrasib + Cetuximab FDA 가속승인 철회(2026-09-01) 반영",en:"Reflected FDA withdrawal of adagrasib + cetuximab accelerated approval (2026-09-01)"},
@@ -2980,7 +3016,7 @@ function cx(k){return CXI[state.lang==="en"?"en":"ko"][k]}
 var CXSEL=".badge,.grade,.evb,.chip,.nwb,.cph,.cln,.csub,.cstg,.tlty,.nvchip";
 function cxKeys(el){var K=[],tx=(el.textContent||"").trim(),cl=el.classList;
   function grade(s){String(s).replace(/(?:^|[^0-9A-Za-z])(1|2A|2B|3)(?![0-9A-Za-z])/g,function(_,c){var k="c"+c;if(K.indexOf(k)<0)K.push(k)});
-    if(/preferred/i.test(s)&&!/other/i.test(s))K.push("pref");else if(/other recommended|기타 권고/i.test(s))K.push("other");if(/useful/i.test(s))K.push("useful")}
+    if(/preferred/i.test(s)&&!/other/i.test(s))K.push("pref");else if(/other recommended|기타 권고/i.test(s))K.push("other");if(/useful|\bUCC\b/i.test(s))K.push("useful")}
   if(cl.contains("badge")){var m=/(?:^|\s)s-([A-Z])/.exec(el.className);if(m)K.push("st_"+m[1]);var rg=el.querySelector(".rg");var full=el.getAttribute("title")||"";grade(rg?rg.textContent+" "+full.split(" — ")[1]:"");return K}
   if(cl.contains("grade")){grade(tx);return K}
   if(cl.contains("evb"))return ["evb"];
