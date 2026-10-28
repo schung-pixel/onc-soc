@@ -1782,7 +1782,7 @@ const HEME = [
    R("2세대 TKI (보수티닙·다사티닙·닐로티닙)","","L|1|Preferred|p.8–9","중·고위험군에서 asciminib과 함께 Preferred."),
    R("아시미닙 (ASC4FIRST, NCT04971226)","48주 MMR 67.7% vs 49.0% (NEJM 2024;391:885, PMID 38820078). 96주 MMR 74.1% vs 52.0%, MR4.5 30.9% vs 17.7% (96주 MMR: Blood 2026;147:1433, PMID 41397287. MR4.5는 원문 확인 필요)","L|1|Preferred|p.8–9","기존 정리의 144주 수치는 확인하지 못해 삭제함. ABL1 exon 2 결손 isoform 환자는 금기(p.4).","2")]},
   {lg:"adj",label:"치료중단 (TFR)",items:[R("TKI 중단 (TFR) 시도","만성기이며 TKI 3년 이상 투여, MR4(BCR::ABL1 ≤0.01% IS) 2년 이상 안정 유지 등 NCCN 중단 기준을 모두 충족할 때 고려. 중단 후 MMR을 잃으면 4주 안에 TKI를 재개함.","L|2A||p.29","NCCN v2.2027 기준(p.29). MR4.5는 중단 기준이 아니라 qPCR 검사가 갖춰야 할 검출 민감도 요건임. 1차 중단 실패 뒤 포나티닙 공고 후 2차 중단(ReStop, EHA 2026)은 NCCN에 수록되지 않음.")]},
-  {lg:"2L",label:"2차 이후",items:[R("대체 TKI 교체 (BCR::ABL1 변이 기반: 아시미닙·보수티닙·다사티닙·닐로티닙·포나티닙)","이매티닙 실패 시 2세대 TKI 또는 아시미닙, 2세대 TKI 실패 시 다른 TKI로 교체. T315I는 포나티닙 또는 아시미닙. 2개 이상 TKI 실패 시 포나티닙. 동종조혈모세포이식 평가 병행","L|2A||p.14","","e")]}]}],
+  {lg:"2L",label:"2차 이후",items:[R("대체 TKI 교체 (BCR::ABL1 변이 기반: 아시미닙·보수티닙·다사티닙·닐로티닙·포나티닙)","이매티닙 실패 시 2세대 TKI 또는 아시미닙, 2세대 TKI 실패 시 다른 TKI로 교체. T315I는 포나티닙 또는 아시미닙. 2개 이상 TKI 실패 시 포나티닙. 동종조혈모세포이식 평가 병행","L|2A||p.14","")]}]}],
  extra:[],
  pipe:[P("신규 3상","이번 검색에서 확인하지 못함. 다음 과제는 아시미닙 이후 내성 변이 관리","e",[],"차수 미확정 — 이번 검색에서 확인하지 못한 항목")],
  srcs:[["ASC4FIRST wk144 (CancerNetwork)","https://www.cancernetwork.com/view/asciminib-may-offer-longer-better-life-in-frontline-cml-care"]]},
@@ -2080,7 +2080,7 @@ document.addEventListener("click",function(e){var r=e.target.closest("[data-rowp
 function cltLink(c,r){var L=cltOf(c);if(!L)return '';var tt=String(r.t||"");for(var j=0;j<L.length;j++){var nm=String(L[j].name||"").split(" (")[0].trim();if(nm&&nm.length>3&&tt.indexOf(nm)>=0)return '<button type="button" class="evmore" data-clt="'+esc(c.id)+'|'+j+'" aria-haspopup="dialog">'+t("evMoreB")+'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>'}return ''}
 function rowHtml(r,c,q,ctx){
   var cls=r.n.s==="D"?" D":r.n.s==="U"?" U":"";var ei=evIdx(c,r);
-  var ntr=ei<0?0:EVD.map[EVK[ei]].trials.length,eb=ntr?'<span class="evb">'+t("evBtn")+' '+ntr+'</span>':'';
+  var ntr=ei<0?0:EVD.map[EVK[ei]].trials.length,eb='';
   var fx=FLAT[r._fi],ss=(r.t+" "+TR(r.t)+" "+(r.ev||"")+" "+(fx?fx.sec+" "+T(fx.sec):"")).toLowerCase(),cg=chgOf(c,r);
   return '<div class="row'+cls+'" data-fi="'+(r._fi==null?"":r._fi)+'" data-s="'+esc(ss)+'"><div>'+(ctx?'<div class="ctx">'+ctx+'</div>':'')+'<div class="t dl">'+orPill(hl(cardTitle(TR(r.t)),q))+(cg?'<span class="nwb k-'+cg.k+'" title="'+esc(cg.d+" · "+(state.lang==="en"?cg.en:cg.ko))+'">'+esc(ux(cg.k==="add"?"bNew":"bChg"))+'</span>':'')+'</div>'+
     (r.fl?'<div class="meta">'+r.fl.split("").map(function(f){return FLAG[f]?'<span class="chip e">'+FLAG[f]+'</span>':''}).join("")+'</div>':'')+
