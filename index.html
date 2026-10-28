@@ -1154,7 +1154,7 @@ html.hasai .wrap{padding-bottom:104px!important}
 /* V65 칩 설명 */
 .badge,.grade,.evb,.chip,.nwb,.cph,.cln,.csub,.cstg,.tlty{cursor:help;-webkit-tap-highlight-color:transparent}
 :is(.badge,.grade,.evb,.chip,.nwb,.cph,.cln,.csub,.cstg,.tlty).cxon{outline:2px solid var(--accent);outline-offset:1px}
-.chipx{position:fixed;z-index:120;width:min(340px,calc(100vw - 24px));max-height:min(60vh,440px);overflow:auto;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:10px;box-shadow:0 10px 32px rgba(0,0,0,.18),0 2px 6px rgba(0,0,0,.08);padding:14px 16px 12px;font-size:13px;line-height:1.6}
+.chipx{position:fixed;z-index:120;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;width:min(340px,calc(100vw - 24px));max-height:min(60vh,440px);overflow:auto;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:10px;box-shadow:0 10px 32px rgba(0,0,0,.18),0 2px 6px rgba(0,0,0,.08);padding:14px 16px 12px;font-size:13px;line-height:1.6}
 .chipx[hidden]{display:none}
 .chipx-x{position:absolute;top:8px;right:8px;width:28px;height:28px;border:0;border-radius:6px;background:transparent;color:var(--muted);display:grid;place-items:center;cursor:pointer}
 .chipx-x svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
@@ -3057,13 +3057,16 @@ function cxOpen(el,K){var p=document.getElementById("chipx");if(!p){p=document.c
   p.hidden=false;p.style.visibility="hidden";p.style.left="0px";p.style.top="0px";
   var r=el.getBoundingClientRect(),vw=document.documentElement.clientWidth,vh=window.innerHeight,w=p.offsetWidth,hh=p.offsetHeight,M=12;
   var x=Math.max(M,Math.min(vw-w-M,r.left+r.width/2-w/2)),y=r.bottom+8;if(y+hh>vh-M&&r.top-8-hh>M)y=r.top-8-hh;else if(y+hh>vh-M)y=Math.max(M,vh-M-hh);
-  p.style.left=x+"px";p.style.top=y+"px";p.style.visibility="";el.classList.add("cxon");cxClose.src=el;cxOpen.t=Date.now()}
+  p.style.left=x+"px";p.style.top=y+"px";p.style.visibility="";el.classList.add("cxon");cxClose.src=el;cxOpen.t=Date.now();cxOpen.inside=false}
 document.addEventListener("click",function(e){var p=document.getElementById("chipx");if(p&&!p.hidden&&p.contains(e.target))return;
   var el=e.target.closest&&e.target.closest(CXSEL);
   if(el&&!el.closest("button,a,.dd,.fsc,#chipx")){var K=cxKeys(el);if(K.length){e.preventDefault();e.stopPropagation();cxOpen(el,K);return}}
   cxClose()},true);
 document.addEventListener("keydown",function(e){if(e.key==="Escape")cxClose()});
-window.addEventListener("scroll",function(e){var p=document.getElementById("chipx");if(Date.now()-(cxOpen.t||0)<450)return;if(p&&!p.hidden&&!(e.target&&e.target.nodeType===1&&p.contains(e.target)))cxClose()},true);
+document.addEventListener("pointerdown",function(e){var p=document.getElementById("chipx");if(!p||p.hidden)return;if(p.contains(e.target)){cxOpen.inside=true;return}cxOpen.inside=false;if(cxClose.src&&cxClose.src.contains(e.target))return;cxClose()},true);
+document.addEventListener("touchmove",function(e){var p=document.getElementById("chipx");if(!p||p.hidden||!p.contains(e.target))return;if(p.scrollHeight<=p.clientHeight+1&&e.cancelable)e.preventDefault()},{capture:true,passive:false});
+window.addEventListener("scroll",function(e){var p=document.getElementById("chipx");if(!p||p.hidden)return;if(e.target&&e.target.nodeType===1&&p.contains(e.target))return;if(cxOpen.inside||Date.now()-(cxOpen.t||0)<450)return;if(e.target===document||e.target===document.documentElement||e.target===document.scrollingElement)cxClose()},true);
+document.addEventListener("wheel",function(e){var p=document.getElementById("chipx");if(p&&!p.hidden&&!p.contains(e.target))cxOpen.inside=false},{capture:true,passive:true});
 window.addEventListener("resize",cxClose);window.addEventListener("onc-lang",cxClose);
 setTimeout(function(){try{if(!localStorage.getItem("onc-db-cxhint")){uxToast(cx("hint"));localStorage.setItem("onc-db-cxhint","1")}}catch(e){}},1200);
 applyLang();
