@@ -1156,11 +1156,11 @@ html.hasai .wrap{padding-bottom:104px!important}
 :is(.badge,.grade,.evb,.chip,.nwb,.cph,.cln,.csub,.cstg,.tlty).cxon{outline:2px solid var(--accent);outline-offset:1px}
 .chipx{position:absolute;z-index:120;width:min(340px,calc(100vw - 24px));background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:10px;box-shadow:0 10px 32px rgba(0,0,0,.18),0 2px 6px rgba(0,0,0,.08);padding:14px 16px 12px;font-size:13px;line-height:1.6}
 .chipx[hidden]{display:none}
-.chipx-x{position:absolute;top:8px;right:8px;width:28px;height:28px;border:0;border-radius:6px;background:transparent;color:var(--muted);display:grid;place-items:center;cursor:pointer}
+.chipx-x{display:none!important;position:absolute;top:8px;right:8px;width:28px;height:28px;border:0;border-radius:6px;background:transparent;color:var(--muted);display:grid;place-items:center;cursor:pointer}
 .chipx-x svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
 .chipx-x:hover{background:var(--surface2);color:var(--ink)}
 .chipx .cxb+.cxb{margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
-.chipx .cxt{font-weight:700;font-size:13.5px;color:var(--accent);padding-right:28px}
+.chipx .cxt{font-weight:700;font-size:13.5px;color:var(--accent)}
 .chipx .cxq{display:block;margin-top:2px;font-weight:600;color:var(--ink);font-size:12.5px}
 .chipx p{margin:4px 0 0}
 .chipx .cxg{margin:10px 0 0;padding-top:8px;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:6px 10px;font-size:12.5px}
@@ -2431,6 +2431,7 @@ var UXI={ko:{bNew:"NEW",bChg:"변경",bUpd:"업데이트",colAll:"모두 접기"
 function ux(k){return UXI[state.lang==="en"?"en":"ko"][k]}
 /* 최근 변경 기록: DB를 고친 날짜(d), 대상 요법 제목 접두(p), 종류(k: add/mod) */
 var CHG=[
+{d:"2026-11-02",cid:"*",p:"",k:"mod",ko:"뒤로 가기: 설명창·자세히 창·목록 선택·암종 이동을 한 단계씩 되돌림(웹앱). 칩 설명창 X 제거",en:"Back button now steps back through popups, details, dropdowns and cancer changes (web app). Removed the X on chip explanations"},
 {d:"2026-10-28",cid:"*",p:"",k:"mod",ko:"출처 칩 정리: 2차 보도·추정 표시 11건을 원 출처(논문·FDA)로 확인해 9건 해제, 수치 보완. 근거 임상 개수 칩 제거",en:"Source flags reviewed: 11 secondary-report or unverified flags checked against primary sources (papers, FDA), 9 cleared and figures updated. Evidence-trial count chip removed"},
 {d:"2026-10-28",cid:"breast",p:"바이오마커별 내분비 병용요법",k:"mod",ko:"HR+/HER2− 2차 행을 NCCN 기준 바이오마커별 내분비 병용요법으로 정리 (Category 1 Preferred, p.88)",en:"HR+/HER2− second line restated per NCCN as biomarker-directed endocrine combinations (category 1, preferred, p.88)"},
 {d:"2026-10-28",cid:"breast",p:"사시투주맙 고비테칸 (1차 미사용 시)",k:"mod",ko:"TNBC 2차 행을 NCCN 기준으로 정리: 사시투주맙 고비테칸 Category 1 Preferred (p.92)",en:"TNBC second line restated per NCCN: sacituzumab govitecan category 1, preferred (p.92)"},
@@ -3084,6 +3085,46 @@ applyLang();
 render();
 setHH();
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){setHH();placeChip(null)});
+/* V66: Android back navigation (history stack for views and overlays; top-level page only) */
+(function(){if(window.top!==window||!window.history||!history.pushState)return;
+  var Q=[],busy=false,syncing=false,ovs=[],lastV=null,needGuard=false,bt=0;
+  function snap(){return {cid:state.cid,sec:String(state.sec),qfo:!!state.qfo}}
+  function eqV(a,b){return !!a&&!!b&&a.cid===b.cid&&a.sec===b.sec&&a.qfo===b.qfo}
+  function openSet(){var o=[],e=document.getElementById("evm"),g=document.getElementById("dgm"),c=document.getElementById("chipx");
+    if(e&&e.classList.contains("on"))o.push("ev");if(g&&g.classList.contains("on"))o.push("dg");
+    if(Array.prototype.some.call(document.querySelectorAll(".dd .dd-list"),function(l){return !l.hidden}))o.push("dd");
+    if(c&&!c.hidden)o.push("cx");return o}
+  function entry(){return {onc:1,v:snap(),ovs:ovs.slice(),y:window.scrollY||0}}
+  function run(){if(busy)return;while(Q.length){var op=Q.shift();
+      if(op.b){var n=op.b;while(Q.length&&Q[0].b)n+=Q.shift().b;busy=true;clearTimeout(bt);bt=setTimeout(function(){if(busy){busy=false;run()}},800);history.go(-n);return}
+      if(needGuard&&history.state&&history.state.root){needGuard=false;history.pushState(entry(),"")}
+      history.pushState(entry(),"")}}
+  function track(){if(syncing)return;var cur=openSet(),closed=ovs.filter(function(x){return cur.indexOf(x)<0}),opened=cur.filter(function(x){return ovs.indexOf(x)<0});
+    if(!closed.length&&!opened.length)return;ovs=ovs.filter(function(x){return cur.indexOf(x)>=0});
+    if(closed.length)Q.push({b:closed.length});opened.forEach(function(x){ovs.push(x);Q.push({p:1})});run()}
+  new MutationObserver(track).observe(document.body,{subtree:true,attributes:true,attributeFilter:["hidden","class"]});
+  var _r=render;render=function(){track();_r.apply(this,arguments);if(syncing)return;var v=snap();if(!eqV(v,lastV)){lastV=v;Q.push({p:1});run()}};
+  function closeOv(x){if(x==="cx")cxClose();else if(x==="dd")ddClose();else if(x==="dg")dgClose();else if(x==="ev")evClose()}
+  function msg(){return state.lang==="en"?"Press back again to exit":"뒤로 버튼을 한 번 더 누르면 종료됩니다"}
+  window.addEventListener("popstate",function(e){var s=e.state;
+    if(busy){busy=false;clearTimeout(bt);run();return}
+    if(!s||!s.onc)return;
+    syncing=true;
+    var keep=s.root?[]:(s.ovs||[]);
+    ovs.slice().reverse().forEach(function(x){if(keep.indexOf(x)<0)closeOv(x)});
+    var cur=openSet();ovs=keep.filter(function(x){return cur.indexOf(x)>=0});
+    if(s.v&&!eqV(snap(),s.v)){state.cid=s.v.cid;state.sec=s.v.sec;state.lg="all";state.qfo=s.v.qfo;if(!s.v.qfo)state.qf="";try{save()}catch(_){}_r();var y=s.y||0;requestAnimationFrame(function(){window.scrollTo(0,y)})}
+    lastV=snap();
+    setTimeout(function(){syncing=false;var c2=openSet();ovs=ovs.filter(function(x){return c2.indexOf(x)>=0})},0);
+    if(s.root){try{uxToast(msg())}catch(_){}needGuard=true}});
+  function guard(){if(!needGuard||busy)return;var h=history.state;if(h&&h.root){needGuard=false;history.pushState(entry(),"")}else if(h&&h.onc)needGuard=false}
+  document.addEventListener("pointerdown",guard,true);document.addEventListener("keydown",guard,true);
+  var st=0;window.addEventListener("scroll",function(){if(busy)return;clearTimeout(st);st=setTimeout(function(){var h=history.state;if(h&&h.onc&&!h.root&&!busy){h=Object.assign({},h,{y:window.scrollY||0});try{history.replaceState(h,"")}catch(_){}}},200)},{passive:true});
+  lastV=snap();ovs=openSet();
+  var h0=history.state;
+  if(h0&&h0.onc&&!h0.root){history.replaceState(entry(),"")}
+  else{history.replaceState({onc:1,root:1,v:snap(),ovs:[],y:0},"");needGuard=true}
+})();
 })();
 </script>
 
