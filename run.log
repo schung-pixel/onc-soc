@@ -1,4 +1,9 @@
 == ct_diff
-tracked=754 new_changes=0 pending=0 not_found=0
+tracked=754 new_changes=0 history=0 not_found=0
 == nccn_ver
-guidelines=69 pending=0 baseline=False
+Traceback (most recent call last):
+  File "/home/runner/work/onc-soc/onc-soc/collect/nccn_ver.py", line 21, in <module>
+    print(f"guidelines={len(cur)} changes={len(old['changes'])} baseline={baseline}")
+                                               ~~~^^^^^^^^^^^
+KeyError: 'changes'
+nccn_ver 실패
