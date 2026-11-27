@@ -26,7 +26,7 @@ jobs:
         run: |
           grep -o 'NCT[0-9]\{8\}' index.html | sort -u > collect/nct_list.txt
           : > collect/run.log
-          for s in ct_diff fda_scan nccn_ver; do
+          for s in ct_diff nccn_ver; do
             echo "== $s" >> collect/run.log
             python3 collect/$s.py >> collect/run.log 2>&1 || echo "$s 실패" >> collect/run.log
           done

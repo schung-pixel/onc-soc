@@ -8,3 +8,5 @@
 - ct_snapshot.json: 비교 기준 스냅샷
 
 NCCN 지침 본문은 수집하지 않으며 판 번호만 읽습니다.
+
+FDA 승인 공지 페이지는 GitHub Actions 러너 접속을 거부(404)하므로 Actions에서는 수집하지 않습니다. 월간 갱신 세션이 `python3 collect/fda_scan.py`를 직접 실행하며, 이때 data 브랜치의 fda_candidates.json을 collect/에 내려받아 사용하고 결과를 되돌려 올립니다.
