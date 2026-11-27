@@ -3,8 +3,15 @@
 import re, json, os, urllib.request, html, datetime
 URL = 'https://www.fda.gov/drugs/cancer-approvals/oncology-cancerhematologic-malignancies-approval-notifications'
 OUT = 'collect/fda_candidates.json'
-req = urllib.request.Request(URL, headers={'User-Agent': 'Mozilla/5.0'})
-h = urllib.request.urlopen(req, timeout=60).read().decode('utf-8', 'ignore')
+HDR = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36',
+       'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.9'}
+def get(u):
+    return urllib.request.urlopen(urllib.request.Request(u, headers=HDR), timeout=60).read().decode('utf-8', 'ignore')
+try:
+    h = get(URL)
+except Exception as e:
+    print('page failed:', e); h = ''
+
 items = {}
 for row in re.split(r'<tr', h)[1:]:
     m = re.search(r'<a href="(/drugs/[^"]+)"[^>]*>(.*?)</a>', row, re.S)
