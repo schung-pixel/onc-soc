@@ -34,18 +34,13 @@ if old is not None:
     missing = [n for n in NCTS if n not in cur]
 else:
     missing = [n for n in NCTS if n not in cur]
-out = {'generated': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%MZ'), 'baseline': old is None,
-       'tracked': len(cur), 'not_found': missing, 'changes': changes}
-# 변경 누적: 월간 갱신이 처리 후 비울 때까지 유지
+today = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d')
 prev = json.load(open(OUT)) if os.path.exists(OUT) else {'changes': []}
-acc = {c['nct']: c for c in prev.get('changes', [])}
-for c in changes:
-    if c['nct'] in acc:
-        for k, v in c['diff'].items():
-            acc[c['nct']]['diff'][k] = [acc[c['nct']]['diff'].get(k, v)[0], v[1]]
-        acc[c['nct']]['updated'] = c['updated']
-    else: acc[c['nct']] = c
-out['changes'] = list(acc.values())
+cut = (datetime.date.today() - datetime.timedelta(days=120)).isoformat()
+hist = [c for c in prev.get('changes', []) if c.get('seen', today) >= cut]
+for c in changes: c['seen'] = today; hist.append(c)
+out = {'generated': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%MZ'), 'baseline': old is None,
+       'tracked': len(cur), 'not_found': missing, 'changes': hist}
 json.dump(cur, open(SNAP, 'w'), ensure_ascii=False, indent=0)
 json.dump(out, open(OUT, 'w'), ensure_ascii=False, indent=1)
-print(f"tracked={len(cur)} new_changes={len(changes)} pending={len(out['changes'])} not_found={len(missing)}")
+print(f"tracked={len(cur)} new_changes={len(changes)} history={len(hist)} not_found={len(missing)}")

@@ -13,17 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: 데이터 브랜치 준비
-        run: |
-          git fetch origin data || true
-          mkdir -p collect-data
-          if git rev-parse origin/data >/dev/null 2>&1; then
-            git --work-tree=collect-data checkout origin/data -- . 2>/dev/null || true
-            git reset -q
-          fi
-          cp collect-data/*.json collect/ 2>/dev/null || true
       - name: 수집
         run: |
+          set -e
+          git clone -q --depth 1 -b data "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" /tmp/pub 2>/dev/null || { mkdir /tmp/pub; git -C /tmp/pub init -q -b data; git -C /tmp/pub remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"; }
+          cp /tmp/pub/*.json collect/ 2>/dev/null || true
           grep -o 'NCT[0-9]\{8\}' index.html | sort -u > collect/nct_list.txt
           : > collect/run.log
           for s in ct_diff nccn_ver; do
@@ -34,11 +28,10 @@ jobs:
       - name: 데이터 브랜치에 기록
         run: |
           set -e
-          mkdir -p /tmp/out && for f in ct_snapshot ct_changes fda_candidates nccn_versions; do cp collect/$f.json /tmp/out/ 2>/dev/null || true; done; cp collect/run.log /tmp/out/
-          rm -rf /tmp/pub && mkdir /tmp/pub && cd /tmp/pub
-          git init -q -b data
+          cd /tmp/pub
           git config user.name "collect-bot"; git config user.email "bot@users.noreply.github.com"
-          cp /tmp/out/* .
-          git add -A && git commit -qm "collect $(date -u +%F)"
-          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
-          git push -f origin data
+          for f in ct_snapshot ct_changes nccn_versions; do cp $GITHUB_WORKSPACE/collect/$f.json . 2>/dev/null || true; done
+          cp $GITHUB_WORKSPACE/collect/run.log .
+          git add -A && git commit -qm "collect $(date -u +%F)" || exit 0
+          git pull -q --rebase origin data 2>/dev/null || true
+          git push origin data
