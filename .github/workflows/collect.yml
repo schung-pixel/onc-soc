@@ -3,6 +3,8 @@ on:
   schedule:
     - cron: '23 18 * * *'   # 매일 03:23 KST
   workflow_dispatch:
+  push:
+    paths: ['.github/workflows/collect.yml', 'collect/**']
 permissions:
   contents: write
 concurrency: collect
