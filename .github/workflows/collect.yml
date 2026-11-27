@@ -1,0 +1,37 @@
+name: collect
+on:
+  schedule:
+    - cron: '23 18 * * *'   # 매일 03:23 KST
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: collect
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 데이터 브랜치 준비
+        run: |
+          git fetch origin data || true
+          mkdir -p collect-data
+          if git rev-parse origin/data >/dev/null 2>&1; then
+            git --work-tree=collect-data checkout origin/data -- . 2>/dev/null || true
+            git reset -q
+          fi
+          cp collect-data/*.json collect/ 2>/dev/null || true
+      - name: 수집
+        run: |
+          grep -o 'NCT[0-9]\{8\}' index.html | sort -u > collect/nct_list.txt
+          python3 collect/ct_diff.py   || echo "ct_diff 실패"
+          python3 collect/fda_scan.py  || echo "fda_scan 실패"
+          python3 collect/nccn_ver.py  || echo "nccn_ver 실패"
+      - name: 데이터 브랜치에 기록
+        run: |
+          git config user.name "collect-bot"; git config user.email "bot@users.noreply.github.com"
+          git checkout -q --orphan data-new
+          git rm -rfq . 2>/dev/null || true
+          cp collect/ct_snapshot.json collect/ct_changes.json collect/fda_candidates.json collect/nccn_versions.json . 2>/dev/null || true
+          git add ct_snapshot.json ct_changes.json fda_candidates.json nccn_versions.json
+          git commit -qm "collect $(date -u +%F)" || exit 0
+          git push -f origin data-new:data
