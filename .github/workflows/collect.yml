@@ -30,10 +30,12 @@ jobs:
           python3 collect/nccn_ver.py  || echo "nccn_ver 실패"
       - name: 데이터 브랜치에 기록
         run: |
+          set -e
+          mkdir -p /tmp/out && cp collect/ct_snapshot.json collect/ct_changes.json collect/fda_candidates.json collect/nccn_versions.json /tmp/out/
+          rm -rf /tmp/pub && mkdir /tmp/pub && cd /tmp/pub
+          git init -q -b data
           git config user.name "collect-bot"; git config user.email "bot@users.noreply.github.com"
-          git checkout -q --orphan data-new
-          git rm -rfq . 2>/dev/null || true
-          cp collect/ct_snapshot.json collect/ct_changes.json collect/fda_candidates.json collect/nccn_versions.json . 2>/dev/null || true
-          git add ct_snapshot.json ct_changes.json fda_candidates.json nccn_versions.json
-          git commit -qm "collect $(date -u +%F)" || exit 0
-          git push -f origin data-new:data
+          cp /tmp/out/*.json .
+          git add -A && git commit -qm "collect $(date -u +%F)"
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          git push -f origin data
