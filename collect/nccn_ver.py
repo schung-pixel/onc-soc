@@ -9,6 +9,7 @@ t = [html.unescape(x.strip()) for x in re.sub(r'<[^>]+>', '\n', h).split('\n') i
 cur = {t[i-1]: t[i].split(':', 1)[1].strip() for i in range(1, len(t))
        if re.fullmatch(r'Version:\s*\d+\.\d{4}', t[i])}
 old = json.load(open(OUT)) if os.path.exists(OUT) else {'versions': {}, 'changes': []}
+old.setdefault('changes', []); old.pop('pending', None)
 baseline = not old['versions']
 if len(cur) < 40: raise SystemExit('parse failed: %d entries' % len(cur))
 if not baseline:
