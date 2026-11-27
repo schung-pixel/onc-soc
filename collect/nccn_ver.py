@@ -14,7 +14,7 @@ if len(cur) < 40: raise SystemExit('parse failed: %d entries' % len(cur))
 if not baseline:
     for k, v in cur.items():
         if old['versions'].get(k) not in (None, v):
-            old['changes'].append({'guideline': k, 'from': old['versions'][k], 'to': v, 'seen': datetime.date.today().isoformat()})
+            old.setdefault('changes', []).append({'guideline': k, 'from': old['versions'][k], 'to': v, 'seen': datetime.date.today().isoformat()})
 old['versions'] = cur
 old['generated'] = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%MZ')
 json.dump(old, open(OUT, 'w'), ensure_ascii=False, indent=1)
